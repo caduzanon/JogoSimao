@@ -1,5 +1,3 @@
-#pragma once
-
 #include <Managers/Graphics.hpp>
 #include <cstring>
 #include <iostream>
