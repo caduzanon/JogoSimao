@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.15)
 
 project(JogoSimao VERSION 1.0)
 
-set(cpp_source_files  src/graphics.cpp src/main.cpp)
+file(GLOB_RECURSE SRC_FILES src/*.cpp)
+set(cpp_source_files  ${SRC_FILES})
 
 set(JogoSimao ${PROJECT_SOURCE_DIR})
 
@@ -23,5 +24,5 @@ target_link_libraries(JogoSimao PUBLIC ${PROJECT_SOURCE_DIR}/SFML/lib/libsfml-gr
 target_link_libraries(JogoSimao PUBLIC ${PROJECT_SOURCE_DIR}/SFML/lib/libsfml-window-d.a)
 target_link_libraries(JogoSimao PUBLIC ${PROJECT_SOURCE_DIR}/SFML/lib/libsfml-system-d.a)
 
-install(TARGETS JogoSimao DESTINATION ${PROJECT_SOURCE_DIR}/JogoSimao_Build/bin)
-install(FILES "${PROJECT_BINARY_DIR}/include/Defines/SOURCEDIR.h" DESTINATION ${PROJECT_SOURCE_DIR}/JogoSimao_Build/include)
+#install(TARGETS JogoSimao DESTINATION ${PROJECT_SOURCE_DIR}/JogoSimao_Build/bin)
+#install(FILES "${PROJECT_BINARY_DIR}/include/Defines/SOURCEDIR.h" DESTINATION ${PROJECT_SOURCE_DIR}/JogoSimao_Build/include)
