@@ -5,7 +5,9 @@ namespace Entities{
     enum ID {
         empty = 0,
         player,
-        platform
+        platform, 
+        projectile,
+        obstacle
     };
     class Entity{
         private:

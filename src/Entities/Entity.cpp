@@ -14,4 +14,6 @@ namespace Entities {
     Math::CoordsF Entity::getSize() const { return size; }
 
     ID Entity::getID() const { return id; }
+
+    void Entity::render(){ }
 }
