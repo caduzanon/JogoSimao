@@ -1,2 +1,5 @@
-*/*.ini
-main.exe
+*/desktop.ini
+*/*/desktop.ini
+*.exe
+./desktop.ini
+build/*
