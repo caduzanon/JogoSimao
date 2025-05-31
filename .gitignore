@@ -1,5 +1,5 @@
-*/desktop.ini
-*/*/desktop.ini
+*/*.ini
+*/*/*.ini
 *.exe
-./desktop.ini
+./*.ini
 build/*
