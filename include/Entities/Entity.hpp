@@ -1,6 +1,6 @@
 #pragma once
 #include <Math/CoordsTL.hpp>
-#include <Managers/Animation.hpp>
+#include <Managers/AnimationManager.hpp>
 
 namespace Entities{
     enum ID {

@@ -1,8 +1,9 @@
-#include <Managers/Animation.hpp>
+#include <Managers/AnimationManager.hpp>
 
 namespace Managers{
     const float AnimationManager::Animation::switchTime = 0.2;
     Graphics* AnimationManager::pGraphicManager = Graphics::getInstance();
+    
     AnimationManager::AnimationManager() : body(), animationMap(), currentID(Animation_ID::walk){
         body.setScale(sf::Vector2f(3,3));
     }

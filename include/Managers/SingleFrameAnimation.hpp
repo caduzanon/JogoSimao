@@ -7,6 +7,7 @@ namespace Managers{
         private:
             sf::Texture* texture;
             sf::RectangleShape body;
+            static Graphics* pGraphicsManager;
         public:
             SingleFrameAnimation(const char* path, Math::CoordsF position, Math::CoordsF size);
             ~SingleFrameAnimation();

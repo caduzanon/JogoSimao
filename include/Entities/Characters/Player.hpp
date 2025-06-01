@@ -10,6 +10,7 @@ namespace Entities{
         class Player : public  Entity {
             private:
                 const bool isPlayer1;
+                float time;
             public:
                 Player(Math::CoordsF position = Math::CoordsF(0.0f, 0.0f), bool isPlayer1 = true);
                 ~Player();

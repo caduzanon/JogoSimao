@@ -4,6 +4,7 @@ project(JogoSimao VERSION 1.0)
 
 file(GLOB_RECURSE SRC_FILES src/*.cpp)
 set(cpp_source_files  ${SRC_FILES})
+message(STATUS "SRC_FILES = ${SRC_FILES}")
 
 set(JogoSimao ${PROJECT_SOURCE_DIR})
 
