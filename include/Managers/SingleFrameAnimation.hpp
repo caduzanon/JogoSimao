@@ -9,7 +9,7 @@ namespace Managers{
             sf::RectangleShape body;
             static Graphics* pGraphicsManager;
         public:
-            SingleFrameAnimation(const char* path, Math::CoordsF position, Math::CoordsF size);
+            SingleFrameAnimation(const char* path, Math::CoordsF position, Math::CoordsF size, float scale);
             ~SingleFrameAnimation();
             void update(Math::CoordsF position);
             void render();

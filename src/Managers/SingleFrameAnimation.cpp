@@ -2,7 +2,13 @@
 #include <Managers/Graphics.hpp>
 
 namespace Managers{
-    SingleFrameAnimation::SingleFrameAnimation(const char* path, Math::CoordsF position, Math::CoordsF size){
-        texture = Graphics::getInstance()->loadTexture(path);
+    SingleFrameAnimation::SingleFrameAnimation(const char* path, Math::CoordsF position, Math::CoordsF size, float scale) : texture(NULL), body(sf::Vector2f(size.x, size.y)){
+        texture = pGraphicsManager->loadTexture(path);
+        body.setPosition(sf::Vector2f(position.x, position.y));
+        body.setScale(sf::Vector2f(scale, scale));
+    }
+
+    void SingleFrameAnimation::render(){
+        pGraphicsManager->render(&body);
     }
 }
