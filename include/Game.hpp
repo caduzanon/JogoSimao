@@ -6,7 +6,7 @@
 class Game {
     private:
         Entities::Characters::Player Player1;
-        Managers::Graphics pGraphicManager;
+        Managers::Graphics* pGraphicManager;
     public:
         Game();
         ~Game();

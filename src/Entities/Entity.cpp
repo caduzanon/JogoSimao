@@ -1,7 +1,9 @@
 #include <Entities/Entity.hpp>
 
+using namespace Managers;
+
 namespace Entities {
-    Entity::Entity(Math::CoordsF position, Math::CoordsF size, ID id) : position(position), size(size), id(id) { } //declaração da construtora
+    Entity::Entity(Math::CoordsF position, Math::CoordsF size, ID id) : position(position), size(size), id(id), sprite() { } //declaração da construtora
 
     Entity::~Entity() { } //declaração da destrutora
 
@@ -15,5 +17,5 @@ namespace Entities {
 
     ID Entity::getID() const { return id; }
 
-    void Entity::render(){ }
+    void Entity::render(){ sprite.render(); }
 }

@@ -14,14 +14,16 @@ namespace Managers {
             sf::Font* font;
             sf::Clock clock;
             static float dt;
-        public:
+            /*Singleton Standard*/
+            static Managers::Graphics* instance;
             Graphics();
+        public:
             ~Graphics();
+            static Graphics* getInstance();
             void render(sf::RectangleShape* body);
             void render(sf::Text* text);
             void display();
             void clear();
-            sf::RenderWindow* getWindow() const;
             bool isWindowOpen() const;
             void closeWindow();
             void handleWindowResize();
@@ -29,6 +31,6 @@ namespace Managers {
             void centerView(Math::CoordsF position);
             sf::Texture* loadTexture(const char* path);
             sf::Font* getFont();
-            void updateDeltaTime();
+            float updateDeltaTime();
     };
 }

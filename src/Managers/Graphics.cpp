@@ -8,14 +8,25 @@
 #define FRAMERATE 120
 
 namespace Managers {
-    float Graphics::dt = 0.0;
-    //Creation of game window
+    //Singleton Creation of GM
+    Graphics* Graphics::instance = NULL;
+    //Pointer to GM
+    Graphics* Graphics::getInstance(){
+        if(instance == NULL){
+            instance = new Graphics();
+        }
+        return instance;
+    }
+    
+    float Graphics::dt = 0;
+
     Graphics::Graphics() :
     window(new sf::RenderWindow(sf::VideoMode(VIDEO_W,VIDEO_H), "Jogo", sf::Style::Fullscreen)),
     view(sf::Vector2f(VIDEO_W / 2, VIDEO_H / 2), sf::Vector2f(VIDEO_W, VIDEO_H)),
     textureMap(),
     clock(){
         font = NULL;
+        clock.restart();
     }
 
     //Graphics Destructor
@@ -48,11 +59,17 @@ namespace Managers {
         if(isWindowOpen()){
             window->clear();
         }
-    }
-
-    //Distribute pointer to window
-    sf::RenderWindow* Graphics::getWindow() const {
-        return window;
+        sf::Event event;
+        while(window->pollEvent(event)){
+            switch (event.type)
+            {
+            case sf::Event::Closed:
+                closeWindow();
+                break;
+            default:
+                break;
+            }
+        }
     }
 
     //Returns the state of the window (open or not)
@@ -120,8 +137,9 @@ namespace Managers {
     }
 
     //Updates the game clock
-    void Graphics::updateDeltaTime() {
-        dt = clock.getElapsedTime().asSeconds();
+    float Graphics::updateDeltaTime() {
+        float dt = clock.getElapsedTime().asSeconds();
         clock.restart();
+        return dt;
     }
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include <Math/CoordsTL.hpp>
+#include <Managers/Animation.hpp>
 
 namespace Entities{
     enum ID {
@@ -10,10 +11,11 @@ namespace Entities{
         obstacle
     };
     class Entity{
-        private:
+        protected:
             Math::CoordsF position;
             Math::CoordsF size;
             ID id;
+            Managers::AnimationManager sprite;
         public:
             Entity(Math::CoordsF position = Math::CoordsF(0.0f, 0.0f), Math::CoordsF size = Math::CoordsF(0.0f, 0.0f), ID id = empty); //construtora inicializando tudo com zero
             ~Entity();

@@ -2,19 +2,23 @@
 
 using namespace Managers;
 
-Game::Game() : pGraphicManager() {
+Game::Game() : pGraphicManager(Graphics::getInstance()), Player1(Math::CoordsF(200.f, 400.f), true) {
     execute();
 }
 
 Game::~Game(){ }
 
 void Game::execute(){
-    while (pGraphicManager.isWindowOpen()){
-        pGraphicManager.updateDeltaTime();
-        pGraphicManager.clear();
+    float dt;
+    while (pGraphicManager->isWindowOpen()){
+        dt = pGraphicManager->updateDeltaTime();
+        pGraphicManager->clear();
         
         //Insert Updates
+        Player1.update(dt);
+        //Insert Renders
+        Player1.render();
 
-        pGraphicManager.display();
+        pGraphicManager->display();
     }
 }
