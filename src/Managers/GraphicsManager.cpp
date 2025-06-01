@@ -13,10 +13,12 @@ namespace Managers{
     GraphicsManager* GraphicsManager::getInstance(){
         if (instance == NULL)
             instance = new GraphicsManager();
+            cout << "Created GM at " << instance << endl;
         return instance;
     }
 
     GraphicsManager::GraphicsManager() : window(new RenderWindow(VideoMode(VIDEO_W, VIDEO_H), "Game", Style::Default)){
+        cout << "GM constructor called" << endl;
     }
 
     RenderWindow* GraphicsManager::getWindow(){
@@ -24,6 +26,7 @@ namespace Managers{
     }
 
     GraphicsManager::~GraphicsManager(){
+        cout << "GM destructor called" << endl;
         clearWindow();
         delete(window);
     }
