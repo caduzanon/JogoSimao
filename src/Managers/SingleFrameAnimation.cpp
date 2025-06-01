@@ -10,6 +10,14 @@ namespace Managers{
         body.setScale(sf::Vector2f(scale, scale));
     }
 
+    SingleFrameAnimation::~SingleFrameAnimation(){
+
+    }
+
+    void SingleFrameAnimation::update(Math::CoordsF position){
+
+    }
+
     void SingleFrameAnimation::render(){
         pGraphicsManager->render(&body);
     }

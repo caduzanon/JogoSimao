@@ -15,7 +15,7 @@ namespace Entities{
             Math::CoordsF position;
             Math::CoordsF size;
             ID id;
-            Managers::AnimationManager sprite;
+            Managers::AnimationManager* sprite;
         public:
             Entity(Math::CoordsF position = Math::CoordsF(0.0f, 0.0f), Math::CoordsF size = Math::CoordsF(0.0f, 0.0f), ID id = empty); //construtora inicializando tudo com zero
             ~Entity();
