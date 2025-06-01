@@ -1,6 +1,7 @@
 #pragma once
 #include <Math/CoordsTL.hpp>
 #include <SFML/Graphics.hpp>
+#include <Managers/Graphics.hpp>
 
 namespace Managers{
     class SingleFrameAnimation{
