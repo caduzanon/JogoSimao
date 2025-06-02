@@ -1,5 +1,5 @@
 #pragma once
-#include <Managers/GraphicsManager.hpp>
+#include <Entities/Being.hpp>
 #include <iostream>
 
 using namespace Managers;

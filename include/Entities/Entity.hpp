@@ -7,7 +7,7 @@ namespace Game{
     namespace Entities{
         class Entity : public Being{
             protected:
-                int x;
+                int x; //probably will swap to a vector of ints, easier that way.
                 int y;
                 ostream buffer;
                 void saveDataBuffer();
