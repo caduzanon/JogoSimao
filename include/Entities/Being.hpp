@@ -2,7 +2,7 @@
 #include <Managers/GraphicsManager.hpp>
 
 //Skeleton of Being - Abstract Class
-
+using namespace std;
 using namespace Managers;
 /*
 TODO:

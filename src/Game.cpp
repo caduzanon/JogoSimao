@@ -1,4 +1,4 @@
-#include <Unique.hpp>
+#include <Game.hpp>
 
 Game::Unique::Unique() : pGM(GraphicsManager::getInstance()){
     update();
