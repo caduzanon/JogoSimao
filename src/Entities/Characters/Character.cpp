@@ -4,10 +4,10 @@ namespace Game{
     namespace Entities{
         namespace Characters{
             Character::Character(){
-                //hello world
+                cout << "Character constructor called" << endl; //hello world
             }
             Character::~Character(){
-                //hello world
+                cout << "Character destructor called" << endl; //hello world
             }
             void saveDataBuffer(){
                 //hello world

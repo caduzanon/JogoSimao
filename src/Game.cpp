@@ -11,7 +11,7 @@ namespace Game{
     }
 
     Unique::~Unique(){
-
+        cout << "'Main' destructor called" << endl;
     }
 
     void Unique::update(){

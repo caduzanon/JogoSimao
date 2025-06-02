@@ -4,7 +4,7 @@
 
 #define VIDEO_W 1900
 #define VIDEO_H 1000
-#define FRAMERATE 120
+#define FRAMERATE 180
 
 namespace Managers{
     //Singleton
@@ -18,6 +18,7 @@ namespace Managers{
     }
 
     GraphicsManager::GraphicsManager() : window(new RenderWindow(VideoMode(VIDEO_W, VIDEO_H), "Game", Style::Default)){
+        window->setFramerateLimit(FRAMERATE);
         cout << "GM constructor called" << endl;
     }
 
