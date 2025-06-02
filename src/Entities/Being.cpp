@@ -9,9 +9,9 @@ namespace Game{
         cout << "Being destructor called" << endl;
     }
     void Being::setGM(GraphicsManager* pointerGM){
-        pGM = pointerGM->getInstance();
+        pGM = pointerGM;
     }
-    void Being::draw(){
-        
+    void Being::render(){
+        //pGM->renderBeing(this);
     }
 }
