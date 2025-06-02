@@ -1,22 +1,25 @@
 #pragma once
 #include <iostream>
-#include <Unique.hpp>
-
-using namespace sf;
+#include <Character.hpp>
 
 namespace Game{
-    namespace Player{
-        class Player{
-            private:
-                RectangleShape body;
-                Vector2u velocity;
-                void initialize();
-            public:
-                Player(const Vector2f position, const Vector2f size);
-                ~Player();
-                const RectangleShape getBody();
-                void move();
-        };
+    namespace Entities{
+        namespace Characters{
+            class Player : public Character{
+                private:
+                    int points;
+                    RectangleShape body;
+                    Vector2u velocity;
+                    void initialize();
+                public:
+                    Player(const Vector2f position, const Vector2f size);
+                    ~Player();
+                    const RectangleShape getBody();
+                    void update();
+                    void move();
+                    void save();
+            };
+        }
     }
 }
 
