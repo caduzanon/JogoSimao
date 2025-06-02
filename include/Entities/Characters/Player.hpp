@@ -8,11 +8,12 @@ namespace Game{
             class Player : public Character{
                 private:
                     int points;
+                    bool isPlayer1;
                     RectangleShape body;
                     Vector2f velocity;
                     void initialize();
                 public:
-                    Player(const Vector2f position, const Vector2f size);
+                    Player(const Vector2f position, const Vector2f size, bool isPlayer1);
                     Player(const RectangleShape body);
                     Player();
                     ~Player();
