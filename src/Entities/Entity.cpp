@@ -3,10 +3,10 @@
 namespace Game{
     namespace Entities{
         Entity::Entity(){
-            //hello world
+            cout << "Entity constructor called" << endl; //hello world
         }
         Entity::~Entity(){
-            //hello world
+            cout << "Entity destructor called" << endl; //hello world
         }
         void Entity::saveDataBuffer(){
             //hello 3

@@ -18,11 +18,11 @@ namespace Game{
             }
 
             Player::~Player(){
-
+                cout << "Player destructor called" << endl;
             }
 
             void Player::initialize(){
-                velocity = Vector2f(0.1f, 0.1f);
+                velocity = Vector2f(8.0f, 8.0f);
             }
 
             const RectangleShape& Player::getBody() const {
