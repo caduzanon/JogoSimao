@@ -1,28 +1,34 @@
 #include <Game.hpp>
+#include <Entities/Being.hpp>
+#include <Entities/Characters/Player.hpp>
 
-Game::Unique::Unique() : pGM(GraphicsManager::getInstance()){
-    update();
-}
+namespace Game{
+    using namespace Entities;
+    using namespace Characters;
 
-Game::Unique::~Unique(){
+    Unique::Unique() : pGM(GraphicsManager::getInstance()){
+        update();
+    }
 
-}
+    Unique::~Unique(){
 
-void Game::Unique::update(){
-    RectangleShape player(Vector2f(20.0f, 20.0f));
-    player.setFillColor(Color::Cyan);
-    player.setPosition(Vector2f(300.0f, 300.0f));
+    }
 
-    while(pGM->isWindowOpen()){
-        Event evento;
-        RenderWindow* window = pGM->getWindow();
-        if(window->pollEvent(evento)){
-            if(evento.type == Event::Closed || (evento.type == Event::KeyPressed && evento.key.code == Keyboard::Escape)){
-                pGM->closeWindow();
+    void Unique::update(){
+        Player* Player1 = new Player(Vector2f(300.0f, 300.0f), Vector2f(20.0f, 20.0f));
+
+        while(pGM->isWindowOpen()){
+            Event evento;
+            RenderWindow* window = pGM->getWindow();
+            if(window->pollEvent(evento)){
+                if(evento.type == Event::Closed || (evento.type == Event::KeyPressed && evento.key.code == Keyboard::Escape)){
+                    pGM->closeWindow();
+                }
             }
+            pGM->clearWindow();
+            Player1->move();
+            pGM->render(&Player1->getBody());
+            pGM->display();
         }
-        pGM->clearWindow();
-        pGM->render(&player);
-        pGM->display();
     }
 }

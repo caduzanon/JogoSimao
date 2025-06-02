@@ -21,6 +21,6 @@ namespace Game{
             ~Being();
             virtual void update() = 0;
             void draw();
-            static void setGM(GraphicsManager* pGM);
+            static void setGM(GraphicsManager* pointerGM);
     };
 }
