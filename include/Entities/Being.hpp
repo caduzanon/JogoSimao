@@ -8,7 +8,8 @@ using namespace Managers;
 TODO:
 using namespace Entities;
 using namespace Lists;
-using namespace Levels; */
+using namespace Levels; 
+*/
 
 namespace Game{
     class Being{
@@ -20,7 +21,7 @@ namespace Game{
             Being();
             ~Being();
             virtual void update() = 0;
-            void draw();
+            void render();
             static void setGM(GraphicsManager* pointerGM);
     };
 }

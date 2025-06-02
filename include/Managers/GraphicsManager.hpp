@@ -16,8 +16,8 @@ namespace Managers{
             ~GraphicsManager();
             static GraphicsManager* getInstance();
             RenderWindow* getWindow();
-            void render(RectangleShape* body);
-            void render(const RectangleShape* body);
+            void renderBeing(RectangleShape* body);
+            void renderBeing(const RectangleShape* body);
             void display();
             void clearWindow();
             bool isWindowOpen() const;

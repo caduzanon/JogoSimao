@@ -32,11 +32,11 @@ namespace Managers{
         delete(window);
     }
 
-    void GraphicsManager::render(RectangleShape* body){
+    void GraphicsManager::renderBeing(RectangleShape* body){
         window->draw(*body);
     }
 
-    void GraphicsManager::render(const RectangleShape* body){
+    void GraphicsManager::renderBeing(const RectangleShape* body){
         window->draw(*body);
     }
 
