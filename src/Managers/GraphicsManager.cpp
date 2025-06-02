@@ -35,6 +35,10 @@ namespace Managers{
         window->draw(*body);
     }
 
+    void GraphicsManager::render(const RectangleShape* body){
+        window->draw(*body);
+    }
+
     void GraphicsManager::display(){
         if(isWindowOpen()){
             window->display();

@@ -9,7 +9,7 @@ namespace Game{
             protected:
                 int x; //probably will swap to a vector of ints, easier that way.
                 int y;
-                ostream buffer;
+                //ostream buffer;
                 void saveDataBuffer();
             public:
                 Entity();
