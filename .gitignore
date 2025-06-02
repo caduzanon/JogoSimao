@@ -1,5 +1,6 @@
 */*.ini
 */*/*.ini
+*.ini
 *.exe
 ./*.ini
 build/*
