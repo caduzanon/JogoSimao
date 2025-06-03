@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <Entities/Being.hpp>
+//#include <Entities/Being.hpp>
 #include <iostream>
 
 using namespace sf;

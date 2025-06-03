@@ -1,4 +1,5 @@
 #include <Entities/Characters/Character.hpp>
+#include <iostream>
 
 namespace Game{
     namespace Entities{
