@@ -7,14 +7,14 @@ namespace Game{
     using namespace Managers;
     using namespace Entities;
     using namespace Characters;
-    class Unique{
+    class Game{
         private:
             Player* pPlayer1;
             Player* pPlayer2;
             GraphicsManager* pGM;
         public:
-            Unique();
-            ~Unique();
+            Game();
+            ~Game();
             void update();
     };
 }
