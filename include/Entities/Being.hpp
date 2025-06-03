@@ -3,7 +3,7 @@
 
 //Skeleton of Being - Abstract Class
 using namespace std;
-using namespace Managers;
+
 /*
 TODO:
 using namespace Entities;
@@ -11,17 +11,20 @@ using namespace Lists;
 using namespace Levels; 
 */
 
-namespace Game{
+namespace Game{  
+    //using namespace Managers;  
     class Being{
         protected:
             int id;
-            static GraphicsManager* pGM;
+            static Managers::GraphicsManager* pGM;
             sf::Image* pFig;
+            RectangleShape* shape;
         public:
             Being();
             ~Being();
             virtual void update() = 0;
             void render();
-            static void setGM(GraphicsManager* pointerGM);
+            RectangleShape* getShape();
+            static void setGM(Managers::GraphicsManager* pointerGM);
     };
 }
