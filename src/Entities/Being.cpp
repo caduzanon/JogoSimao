@@ -1,17 +1,23 @@
 #include <Entities/Being.hpp>
 
 namespace Game{
-    GraphicsManager* Being::pGM = NULL;
     Being::Being(){
         cout << "Being constructor called" << endl;
+        shape = NULL;
     }
     Being::~Being(){
         cout << "Being destructor called" << endl;
     }
-    void Being::setGM(GraphicsManager* pointerGM){
-        pGM = pointerGM;
+    void Being::setGM(Managers::GraphicsManager* pointerGM){
+        if (pointerGM != NULL)
+            pGM = pointerGM;
     }
     void Being::render(){
-        //pGM->renderBeing(this);
+        pGM->renderBeing(this);
+    }
+    RectangleShape* Being::getShape(){
+        if(shape != NULL){
+            return shape;
+        }
     }
 }

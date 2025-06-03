@@ -3,10 +3,8 @@
 #include <Entities/Characters/Player.hpp>
 #include <iostream>
 
-using namespace Managers;
-
-
 namespace Game{
+    using namespace Managers;
     using namespace Entities;
     using namespace Characters;
     class Unique{

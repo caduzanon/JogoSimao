@@ -4,6 +4,7 @@ namespace Game{
     namespace Entities{
         namespace Characters{
             Player::Player(const Vector2f position, const Vector2f size, bool isPlayer1) : body(RectangleShape(size)), isPlayer1(isPlayer1) {
+                shape = &body;
                 body.setPosition(position);
                 if (isPlayer1)
                     body.setFillColor(Color::Green);

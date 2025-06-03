@@ -32,8 +32,8 @@ namespace Game{
             pGM->clearWindow();
             pPlayer1->move();
             pPlayer2->move();
-            pGM->renderBeing(&pPlayer1->getBody());
-            pGM->renderBeing(&pPlayer2->getBody());
+            pPlayer1->render();
+            pPlayer2->render();
             pGM->display();
         }
     }
