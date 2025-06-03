@@ -8,6 +8,6 @@ int main(){
     //Lista<T> e ListaEntidades;
     //Destrutoras!
     
-    Game::Unique MeuJogo;
+    Game::Game MeuJogo;
     return 0;
 }
