@@ -9,10 +9,10 @@
 namespace Game{
     namespace Managers{
         //Singleton
-        GraphicsManager* GraphicsManager::instance = NULL;
+        GraphicsManager* GraphicsManager::instance = nullptr;
 
         GraphicsManager* GraphicsManager::getInstance(){
-            if (instance == NULL)
+            if (instance == nullptr)
                 instance = new GraphicsManager();
                 cout << "Created GM at " << instance << endl;
             return instance;
@@ -31,13 +31,14 @@ namespace Game{
             cout << "GM destructor called" << endl;
             clearWindow();
             delete(window);
-            delete(instance);
         }
 
         void GraphicsManager::renderBeing(Being* being){
-            if(isWindowOpen())
-                if(being != NULL)
-                    window->draw(being->getShape());
+            if(isWindowOpen()){
+                if(being != nullptr && being->getShape() != nullptr){
+                    window->draw(*(being->getShape()));
+                }
+            }
         }
 
         void GraphicsManager::display(){
@@ -53,11 +54,14 @@ namespace Game{
         }
 
         bool GraphicsManager::isWindowOpen() const{
-            return window->isOpen();
+            if(window)
+                return window->isOpen();
+            return false;
         }
 
         void GraphicsManager::closeWindow(){
-            window->close();
+            if(window) 
+                window->close();
         }
     }
 }

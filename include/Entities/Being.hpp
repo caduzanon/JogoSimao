@@ -1,8 +1,10 @@
 #pragma once
-#include <Managers/GraphicsManager.hpp>
-
+//#include <Managers/GraphicsManager.hpp>
+#include <SFML/Graphics.hpp>
+#include <iostream>
 //Skeleton of Being - Abstract Class
 using namespace std;
+using namespace sf;
 
 /*
 TODO:
@@ -12,7 +14,10 @@ using namespace Levels;
 */
 
 namespace Game{  
-    //using namespace Managers;  
+
+    namespace Managers{
+        class GraphicsManager;
+    }
     class Being{
         protected:
             int id;

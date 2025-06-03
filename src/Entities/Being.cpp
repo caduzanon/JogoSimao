@@ -1,9 +1,14 @@
 #include <Entities/Being.hpp>
+#include <Managers/GraphicsManager.hpp>
+#include <iostream>
+
+//Game::Managers::GraphicsManager* Game::Being::pGM = nullptr;
 
 namespace Game{
+    Managers::GraphicsManager* Being::pGM = nullptr;
     Being::Being(){
         cout << "Being constructor called" << endl;
-        shape = NULL;
+        shape = nullptr;
     }
     Being::~Being(){
         cout << "Being destructor called" << endl;
@@ -13,11 +18,13 @@ namespace Game{
             pGM = pointerGM;
     }
     void Being::render(){
-        pGM->renderBeing(this);
+        if(pGM)
+            pGM->renderBeing(this);
     }
     RectangleShape* Being::getShape(){
-        if(shape != NULL){
+        if(shape != nullptr){
             return shape;
         }
+        return nullptr;
     }
 }
