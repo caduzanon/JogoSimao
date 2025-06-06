@@ -39,7 +39,7 @@ namespace Game{
             //mostra
             pGM->display();
         }
-        sf::Time totalTime = totalTimeClock.getElapsedTime();
+        sf::Time totalTime = totalTimeClock.getElapsedTime(); //aa
         cout << "Total Time: " << totalTime.asSeconds() << "s" << std::endl; //maybe we could do something logical with the time
     }
 }
