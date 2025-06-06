@@ -3,5 +3,5 @@
 *.ini
 *.exe
 ./*.ini
-build
+build/*
 .vscode

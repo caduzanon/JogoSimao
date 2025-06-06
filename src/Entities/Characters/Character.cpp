@@ -13,12 +13,6 @@ namespace Game{
             void saveDataBuffer(){
                 //hello world
             }
-<<<<<<< HEAD
-=======
-            const RectangleShape& Character::getBody() const {
-                return body;
-            }
->>>>>>> b9e18797413fa56976b46db981d33b5be10ba0a8
         }
     }
 }
