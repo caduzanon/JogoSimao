@@ -12,6 +12,7 @@ namespace Game{
             Player* pPlayer1;
             Player* pPlayer2;
             GraphicsManager* pGM;
+            sf::Clock totalTimeClock;
         public:
             Game();
             ~Game();
