@@ -23,13 +23,15 @@ namespace Game{
             int id;
             static Managers::GraphicsManager* pGM;
             sf::Image* pFig;
-            RectangleShape* shape;
+            RectangleShape body;
         public:
+            Being(const Vector2f position, const Vector2f size);
+            Being(const RectangleShape givenbody);
             Being();
             ~Being();
             virtual void update() = 0;
             void render();
-            RectangleShape* getShape();
+            RectangleShape getBody();
             static void setGM(Managers::GraphicsManager* pointerGM);
     };
 }

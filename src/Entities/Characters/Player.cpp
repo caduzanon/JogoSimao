@@ -3,10 +3,7 @@
 namespace Game{
     namespace Entities{
         namespace Characters{
-            Player::Player(const Vector2f position, const Vector2f size, bool isPlayer1) : isPlayer1(isPlayer1) {
-                body = RectangleShape(size);
-                shape = &body;
-                body.setPosition(position);
+            Player::Player(const Vector2f position, const Vector2f size, bool isPlayer1) : isPlayer1(isPlayer1), Character(position, size) {
                 if (isPlayer1)
                     body.setFillColor(Color::Green);
                 else
@@ -14,8 +11,7 @@ namespace Game{
                 initialize();
             }
 
-            Player::Player(const RectangleShape givenbody) {
-                body = givenbody;
+            Player::Player(const RectangleShape givenbody) : Character(givenbody){
                 initialize();
             }
 

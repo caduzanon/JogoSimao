@@ -35,8 +35,8 @@ namespace Game{
 
         void GraphicsManager::renderBeing(Being* being){
             if(isWindowOpen()){
-                if(being != nullptr && being->getShape() != nullptr){
-                    window->draw(*(being->getShape()));
+                if(being != nullptr){
+                    window->draw(being->getBody());
                 }
             }
         }
