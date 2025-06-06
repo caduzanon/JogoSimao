@@ -3,7 +3,12 @@
 namespace Game{
     namespace Entities{
         namespace Characters{
+<<<<<<< HEAD
             Player::Player(const Vector2f position, const Vector2f size, bool isPlayer1) : body(RectangleShape(size)), isPlayer1(isPlayer1) {
+=======
+            Player::Player(const Vector2f position, const Vector2f size, bool isPlayer1) : isPlayer1(isPlayer1) {
+                body = RectangleShape(size);
+>>>>>>> b9e18797413fa56976b46db981d33b5be10ba0a8
                 shape = &body;
                 body.setPosition(position);
                 if (isPlayer1)
@@ -13,11 +18,20 @@ namespace Game{
                 initialize();
             }
 
+<<<<<<< HEAD
             Player::Player(const RectangleShape body) : body(body) {
                 initialize();
             }
 
             Player::Player() : body() {
+=======
+            Player::Player(const RectangleShape givenbody) {
+                body = givenbody;
+                initialize();
+            }
+
+            Player::Player(){
+>>>>>>> b9e18797413fa56976b46db981d33b5be10ba0a8
                 initialize();
             }
 
@@ -33,10 +47,13 @@ namespace Game{
                 }
             }
 
+<<<<<<< HEAD
             const RectangleShape& Player::getBody() const {
                 return body;
             }
 
+=======
+>>>>>>> b9e18797413fa56976b46db981d33b5be10ba0a8
             void Player::update(){
                 
             }
