@@ -12,5 +12,5 @@ namespace Game::Entities::Obstacles {
 
     Obstacle::~Obstacle() {
         
-    }
+    }   
 }

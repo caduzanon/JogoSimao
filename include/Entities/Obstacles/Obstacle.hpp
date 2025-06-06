@@ -15,8 +15,8 @@ namespace Game::Entities::Obstacles{
             Obstacle(const Vector2f position, const Vector2f size, bool harms = false); //construtora
             virtual ~Obstacle();    //destrutora
             void saveDataBuffer();
-            void update();
-            void save();
+            virtual void update() = 0;
+            virtual void save() = 0;
             virtual void obstruct(Player* pPlayer) = 0; //virtual pura tem que ser implementada na filha
 
     };

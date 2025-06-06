@@ -1,8 +1,9 @@
 #pragma once
 #include <Lists/Element.hpp>
-
+#include <iostream>
 namespace Game{
     namespace Lists{
+        using namespace std;
         template<class TL>
         class List{
             private:
@@ -129,7 +130,7 @@ namespace Game{
                 }else if (aux1 = pLast){
                     pLast = aux2;
                 }else{
-                    aux2->setNext(aux1->getNext)
+                    aux2->setNext(aux1->getNext());
                 }
                 if (deletion){
                     delete(aux1);
@@ -160,7 +161,7 @@ namespace Game{
 
             Element<TL>* aux1 = pFirst;
             for (int i = 0; i<position; i++){
-                aux1 = aux1->getNext;
+                aux1 = aux1->getNext();
             }
             if (aux1 != nullptr){
                 return aux1->getElement();
@@ -175,7 +176,7 @@ namespace Game{
                 Element<TL>* aux1 = pFirst;
                 Element<TL>* aux2 = nullptr;
                 int i = 0;
-                while (aux != nullptr && i < size){
+                while (aux1 != nullptr && i < size){
                     TL* element = aux1->getElement();
                     if (element != nullptr){
                         delete(element);
