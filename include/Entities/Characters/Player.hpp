@@ -2,6 +2,9 @@
 #include <iostream>
 #include <Entities/Characters/Character.hpp>
 
+/**
+ * @brief Essa classe é essencial
+ */
 namespace Game{
     namespace Entities{
         namespace Characters{
