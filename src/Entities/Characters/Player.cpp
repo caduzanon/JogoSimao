@@ -3,8 +3,7 @@
 namespace Game{
     namespace Entities{
         namespace Characters{
-            Player::Player(const Vector2f position, const Vector2f size, bool isPlayer1) : isPlayer1(isPlayer1) {
-                body = RectangleShape(size);
+            Player::Player(const Vector2f position, const Vector2f size, bool isPlayer1) : body(RectangleShape(size)), isPlayer1(isPlayer1) {
                 shape = &body;
                 body.setPosition(position);
                 if (isPlayer1)
@@ -14,12 +13,11 @@ namespace Game{
                 initialize();
             }
 
-            Player::Player(const RectangleShape givenbody) {
-                body = givenbody;
+            Player::Player(const RectangleShape body) : body(body) {
                 initialize();
             }
 
-            Player::Player(){
+            Player::Player() : body() {
                 initialize();
             }
 
@@ -33,6 +31,10 @@ namespace Game{
                 }else{
                     velocity = Vector2f(10.0f, 10.0f);
                 }
+            }
+
+            const RectangleShape& Player::getBody() const {
+                return body;
             }
 
             void Player::update(){
