@@ -3,7 +3,7 @@
 
 namespace Game{
     namespace Lists{
-        template <class TL>
+        template<class TL>
         class List{
             private:
                 Element<TL>* pFirst;
@@ -21,18 +21,18 @@ namespace Game{
                 void clearList();
         };
 
-        template <class TL>
+        template<class TL>
         List<TL>::List() : pFirst(nullptr), pLast(nullptr), size(0){ //initializes list
             //hello
         }
 
-        template <class TL>
+        template<class TL>
         List<TL>::~List(){ //destroys list
             //baibai
             clearList();
         }
 
-        template <class TL>
+        template<class TL>
         void List<TL>::addElement(TL* element){ //inserts element at the end of list
             if (element == nullptr){ //check for null
                 cout << "Error when adding element: Null pointer received" << endl;
@@ -61,7 +61,7 @@ namespace Game{
 
 
 
-        template <class TL>
+        template<class TL>
         void List<TL>::addElement(TL* element, int position){ //inserts element at a desired position
             if (position > size || position < 0){
                 cout << "Error: position is incompatible with the current List size. Please use the other function to add element." << endl;
@@ -110,7 +110,7 @@ namespace Game{
 
 
 
-        template <class TL>
+        template<class TL>
         void List<TL>::removeElement(TL* element, const bool deletion){ //removes element by element content
             if(element == nullptr){
                 cout << "Error when removing element: Null pointer received" << endl;
@@ -140,18 +140,18 @@ namespace Game{
             }
         }
 
-        template <class TL>
+        template<class TL>
         void List<TL>::removeElement(int position, const bool deletion){ //removes element by its position
             TL* element = operator[](position);
             return removeElement(element, deletion); //why not use the other one
         }
 
-        template <class TL>
+        template<class TL>
         int List<TL>::getSize(){ //returns the size of the list
             return (int)size;
         }
 
-        template <class TL>
+        template<class TL>
         TL* List<TL>::operator[](int position){ //returns the element at the desired position
             if(position >= size || position < 0){
                 cout << "Error when searching for element in List: Position out of bounds." << endl;
@@ -169,7 +169,7 @@ namespace Game{
             return nullptr;
         }
 
-        template <class TL>
+        template<class TL>
         void List<TL>::clearList(){ //clears the list
             if(pFirst != nullptr){
                 Element<TL>* aux1 = pFirst;
