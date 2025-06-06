@@ -11,6 +11,7 @@ namespace Game{
                 int y;
                 //ostream buffer;
                 void saveDataBuffer();
+                bool alive;
             public:
                 Entity(const Vector2f position, const Vector2f size);
                 Entity(const RectangleShape givenbody);
@@ -19,7 +20,7 @@ namespace Game{
                 virtual void update() = 0;
                 virtual void save() = 0;
                 void setPosition(int new_x, int new_y);
-                sf::Vector2i getPosition() const;
+                Vector2i getPosition() const;
         };
     }
 }

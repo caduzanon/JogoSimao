@@ -10,14 +10,14 @@ namespace Game::Entities::Obstacles{
 
     class Obstacle: public Entity {
         protected: 
-            bool isdamage;
+            bool harmful;
         public:
-            Obstacle(const sf::Vector2f& position, const sf::Vector2f& size, bool damage = false); //construtora
+            Obstacle(const Vector2f position, const Vector2f size, bool harms = false); //construtora
             virtual ~Obstacle();    //destrutora
             void saveDataBuffer();
             void update();
             void save();
-            virtual void obstaculize(Player* pPlayer) = 0; //virtual pura tem que ser implementada na filha
+            virtual void obstruct(Player* pPlayer) = 0; //virtual pura tem que ser implementada na filha
 
     };
 }

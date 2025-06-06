@@ -5,18 +5,20 @@ namespace Game{
 
         Entity::Entity(const Vector2f position, const Vector2f size) : Being(position, size), x(position.x), y(position.y){
             cout << "Entity constructor called" << endl; //hello world
+            alive = true;
         }
 
         Entity::Entity(const RectangleShape givenbody) : Being(givenbody){
             x = 0;
             y = 0;
+            alive = true;
         }
 
         Entity::Entity(){
             cout << "Default Entity constructor called" << endl; //hello world
             x = 0;
             y = 0;
-            body = RectangleShape();
+            alive = true;
         }
 
         Entity::~Entity(){
