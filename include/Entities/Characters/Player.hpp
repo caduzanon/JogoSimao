@@ -9,15 +9,12 @@ namespace Game{
                 private:
                     int points;
                     bool isPlayer1;
-                    RectangleShape body;
-                    Vector2f velocity;
                     void initialize();
                 public:
                     Player(const Vector2f position, const Vector2f size, bool isPlayer1);
-                    Player(const RectangleShape body);
+                    Player(const RectangleShape givenbody);
                     Player();
                     ~Player();
-                    const RectangleShape& getBody() const; //const tava me pegando
                     void update();
                     void move();
                     void save();
