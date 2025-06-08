@@ -61,7 +61,7 @@ namespace Game{
                 }
             }
 
-            void Player::draw(sf::RenderTarget& target) {
+            void Player::render(sf::RenderTarget& target) {
                 target.draw(this->body);
             }
             void Player::save(){

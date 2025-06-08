@@ -3,22 +3,23 @@
 #include <Entities/Characters/Player.hpp>
 #include <iostream>
 #include <Lists/EntityList.hpp>
-#include <vector>                           // <<< ADICIONE ESTA LINHA
-#include <Entities/Obstacles/Platform.hpp>  // <<< ADICIONE ESTA LINHA
+#include <vector>
+#include <Entities/Obstacles/Platform.hpp>
 
 namespace Game{
     using namespace Managers;
     using namespace Entities;
     using namespace Characters;
     using namespace Obstacles;
+    using namespace Lists;
     class Game{
         private:
             //Player* pPlayer1;
             //Player* pPlayer2;
             GraphicsManager* pGM;
-            Lists::EntityList entityList;
-            std::vector<Obstacles::Platform*> platform;
-            sf::Clock totalTimeClock;
+            EntityList entityList;
+            vector<Platform*> platform;
+            Clock totalTimeClock;
         public:
             Game();
             ~Game();

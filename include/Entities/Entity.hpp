@@ -7,11 +7,11 @@ namespace Game{
     namespace Entities{
         class Entity : public Being{
             protected:
-                int x; //probably will swap to a vector of ints, easier that way.
+                int x; //should we swap?
                 int y;
                 //ostream buffer;
-                void saveDataBuffer();
                 bool alive;
+                void saveDataBuffer();
             public:
                 Entity(const Vector2f position, const Vector2f size);
                 Entity(const RectangleShape givenbody);
@@ -19,7 +19,7 @@ namespace Game{
                 virtual ~Entity();
                 virtual void update() = 0;
                 virtual void save() = 0;
-                virtual void draw(sf::RenderTarget& target) = 0;
+                virtual void render(RenderTarget& target) = 0;
                 void setPosition(int new_x, int new_y);
                 Vector2i getPosition() const;
         };
