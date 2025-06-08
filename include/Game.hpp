@@ -3,8 +3,8 @@
 #include <Entities/Characters/Player.hpp>
 #include <iostream>
 #include <Lists/EntityList.hpp>
-#include <vector>                           // <<< ADICIONE ESTA LINHA
-#include <Entities/Obstacles/Platform.hpp>  // <<< ADICIONE ESTA LINHA
+#include <vector>                        
+#include <Entities/Obstacles/Platform.hpp>  
 
 namespace Game{
     using namespace Managers;
@@ -19,6 +19,7 @@ namespace Game{
             Lists::EntityList entityList;
             std::vector<Obstacles::Platform*> platform;
             sf::Clock totalTimeClock;
+            RenderWindow* window;
         public:
             Game();
             ~Game();

@@ -3,12 +3,12 @@
 
 namespace Game::Entities::Obstacles {
 
-    Platform::Platform(const sf::Vector2f& position, const sf::Vector2f& size) :
+    Platform::Platform(const sf::Vector2f& position, const sf::Vector2f& size, const sf::Color& color):
         Obstacle(position, size, false) 
     {
         this->body.setPosition(position);
         this->body.setSize(size);
-        this->body.setFillColor(sf::Color(150, 75, 0));
+        this->body.setFillColor(color);
     }
 
     Platform::~Platform() {
