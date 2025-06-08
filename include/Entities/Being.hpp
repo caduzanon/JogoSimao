@@ -30,7 +30,6 @@ namespace Game{
             Being();
             ~Being();
             virtual void update() = 0;
-            void render();
             RectangleShape getBody();
             static void setGM(Managers::GraphicsManager* pointerGM);
     };

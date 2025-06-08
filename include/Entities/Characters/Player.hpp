@@ -17,6 +17,7 @@ namespace Game{
                     Player(const Vector2f position, const Vector2f size, bool isPlayer1);
                     Player(const RectangleShape givenbody);
                     Player();
+                    void draw(sf::RenderTarget& target) override;
                     ~Player();
                     void update();
                     void move();

@@ -39,17 +39,19 @@ namespace Game{
             for (int i = 0; i< size; i++){
                 aux = EntitiesListObject.operator[](i);
                 aux->update();
-                aux->render();
+                //aux->render();
             }
         }
 
-        void EntityList::RenderEntities(){
+        void EntityList::RenderEntities(sf::RenderTarget& target){
             int size = EntitiesListObject.getSize();
             Entity* aux = nullptr;
             for (int i = 0; i< size; i++){
                 aux = EntitiesListObject.operator[](i);
-                aux->render();
+                if (aux) {
+                    aux->draw(target);
+                }
             }
-        }
-    }
+     
+           }   }
 }
