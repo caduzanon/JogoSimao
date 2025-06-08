@@ -9,7 +9,7 @@ namespace Game::Entities::Obstacles {
         void initializeTexture();
 
     public:
-        Platform(const Vector2f position, const Vector2f size);
+        Platform(const Vector2f position, const Vector2f size, const sf::Color color);
         ~Platform();
 
         // heranças de Entity

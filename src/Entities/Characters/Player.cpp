@@ -60,7 +60,6 @@ namespace Game{
                     }
                 }
             }
-
             void Player::render(sf::RenderTarget& target) {
                 target.draw(this->body);
             }
