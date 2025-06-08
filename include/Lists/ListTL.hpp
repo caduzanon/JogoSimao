@@ -16,7 +16,7 @@ namespace Game{
                     ~Element();
                     void setElement(TE* pElement);
                     void setNext(Element<TE>* pNext);
-                    Element<TE>* getNext();
+                    const Element<TE>* getNext();
                     TE* getElement();
                 };
 
@@ -65,7 +65,7 @@ namespace Game{
 
             template<class TL2>
             template<class TE>
-            List<TL2>::Element<TE>* List<TL2>::Element<TE>::getNext() {
+            const List<TL2>::Element<TE>* List<TL2>::Element<TE>::getNext() {
                 return next;
             }
 

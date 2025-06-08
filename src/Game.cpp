@@ -3,10 +3,6 @@
 #include <Entities/Characters/Player.hpp>
 #include <Entities/Obstacles/Platform.hpp>
 #include <vector>
-#include <SFML/Window/Event.hpp>
-#include <SFML/System/Clock.hpp>
-#include <SFML/Window/Keyboard.hpp>
-#include <SFML/Graphics/RenderWindow.hpp>
 #include <iostream>
 
 namespace Game{
