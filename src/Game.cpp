@@ -9,6 +9,11 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <iostream>
 
+#define ALTURA_PLATAFORMA 150.0f 
+#define R_PLAT 157 //0 - 255
+#define G_PLAT 10 //0 - 255
+#define B_PLAT 0 //0 - 255
+
 namespace Game{
     using namespace Entities;
     using namespace Characters;
@@ -17,7 +22,8 @@ namespace Game{
     Game::Game() : 
         pGM(Managers::GraphicsManager::getInstance()), 
         entityList(),
-        platform()
+        platform(),
+        window(pGM->getWindow())
     {
         Player* pPlayer1 = new Player(sf::Vector2f(100.0f, 500.0f), sf::Vector2f(30.0f, 50.f), true);
         Player* pPlayer2 = new Player(sf::Vector2f(700.0f, 500.0f), sf::Vector2f(30.0f, 50.f), false);
@@ -27,7 +33,11 @@ namespace Game{
 
         if (pPlayer1) { Being::setGM(pGM); }
         
-        Platform* pPlat = new Platform(sf::Vector2f(0.f, 900.f), sf::Vector2f(1900.f, 50.f));
+
+        float window_size_x = float(window->getSize().x);
+        float window_size_y = float(window->getSize().y);
+
+        Platform* pPlat = new Platform(sf::Vector2f(0.0f, (window_size_y-ALTURA_PLATAFORMA)), sf::Vector2f(window_size_x, ALTURA_PLATAFORMA), sf::Color(R_PLAT, G_PLAT, B_PLAT));
         platform.push_back(pPlat);
 
         update(); 
