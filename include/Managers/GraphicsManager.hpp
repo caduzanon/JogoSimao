@@ -6,7 +6,6 @@
 using namespace sf;
 using namespace std;
 
-
 namespace Game{
     class Being;
     namespace Managers{

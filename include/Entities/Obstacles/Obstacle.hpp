@@ -7,7 +7,6 @@ namespace Game::Entities::Characters {
 
 namespace Game::Entities::Obstacles{
     using namespace Characters;
-
     class Obstacle: public Entity {
         protected: 
             bool harmful;

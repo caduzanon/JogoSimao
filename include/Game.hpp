@@ -11,14 +11,15 @@ namespace Game{
     using namespace Entities;
     using namespace Characters;
     using namespace Obstacles;
+    using namespace Lists;
     class Game{
         private:
             //Player* pPlayer1;
             //Player* pPlayer2;
             GraphicsManager* pGM;
-            Lists::EntityList entityList;
-            std::vector<Obstacles::Platform*> platform;
-            sf::Clock totalTimeClock;
+            EntityList entityList;
+            vector<Obstacles::Platform*> platform;
+            Clock totalTimeClock;
             RenderWindow* window;
         public:
             Game();

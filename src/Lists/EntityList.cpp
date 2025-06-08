@@ -49,7 +49,7 @@ namespace Game{
             for (int i = 0; i< size; i++){
                 aux = EntitiesListObject.operator[](i);
                 if (aux) {
-                    aux->draw(target);
+                    aux->render(target);
                 }
             }
      

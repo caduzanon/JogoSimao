@@ -1,7 +1,7 @@
 #pragma once
 #include<Entities/Entity.hpp>
 
-//Skeleton of Character - Abstract Entity Class
+//Character - Abstract Entity Class
 
 namespace Game{
     namespace Entities{

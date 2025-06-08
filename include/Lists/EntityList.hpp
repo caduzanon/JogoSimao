@@ -1,6 +1,5 @@
 #pragma once
 #include <Lists/ListTL.hpp>
-#include <Lists/Element.hpp>
 #include <Entities/Entity.hpp>
 
 namespace Game{
@@ -20,7 +19,7 @@ namespace Game{
                 Entity* operator[](int position);
                 void update();
                 //void RenderEntities();
-                void RenderEntities(sf::RenderTarget& target);
+                void RenderEntities(RenderTarget& target);
         };
     }
 }

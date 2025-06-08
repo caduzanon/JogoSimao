@@ -3,7 +3,7 @@
 
 namespace Game::Entities::Obstacles {
 
-    Platform::Platform(const sf::Vector2f& position, const sf::Vector2f& size, const sf::Color& color):
+    Platform::Platform(const sf::Vector2f position, const sf::Vector2f size, const Color color) :
         Obstacle(position, size, false) 
     {
         this->body.setPosition(position);
@@ -19,9 +19,9 @@ namespace Game::Entities::Obstacles {
 
     void Platform::save() {
     }
-    
-    void Platform::draw(sf::RenderTarget& target) {
-        target.draw(this->body);
+
+    void Platform::render(sf::RenderTarget& target) {
+        target.draw(this->body); //draw is for SF functions. render is in most of our own functions
     }
 
     void Platform::obstruct(Characters::Player* pPlayer) {
