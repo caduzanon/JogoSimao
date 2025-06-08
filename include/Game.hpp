@@ -20,7 +20,6 @@ namespace Game{
             EntityList entityList;
             vector<Obstacles::Platform*> platform;
             Clock totalTimeClock;
-            RenderWindow* window;
         public:
             Game();
             ~Game();

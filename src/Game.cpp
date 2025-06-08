@@ -17,8 +17,7 @@ namespace Game{
     Game::Game() : 
         pGM(Managers::GraphicsManager::getInstance()), 
         entityList(),
-        platform(),
-        window(pGM->getWindow())
+        platform()
     {
         Player* pPlayer1 = new Player(sf::Vector2f(100.0f, 500.0f), Vector2f(30.0f, 50.f), true);
         Player* pPlayer2 = new Player(sf::Vector2f(700.0f, 500.0f), Vector2f(30.0f, 50.f), false);
@@ -29,8 +28,8 @@ namespace Game{
         if (pPlayer1) { Being::setGM(pGM); }
         
 
-        float window_size_x = float(window->getSize().x);
-        float window_size_y = float(window->getSize().y);
+        float window_size_x = float(pGM->getWindow()->getSize().x);
+        float window_size_y = float(pGM->getWindow()->getSize().y);
 
         Platform* pPlat = new Platform(Vector2f(0.0f, (window_size_y-ALTURA_PLATAFORMA)), Vector2f(window_size_x, ALTURA_PLATAFORMA), Color(R_PLAT, G_PLAT, B_PLAT));
         platform.push_back(pPlat);
