@@ -19,7 +19,8 @@ namespace Game{
                 int getSize();
                 Entity* operator[](int position);
                 void update();
-                void RenderEntities();
+                //void RenderEntities();
+                void RenderEntities(sf::RenderTarget& target);
         };
     }
 }

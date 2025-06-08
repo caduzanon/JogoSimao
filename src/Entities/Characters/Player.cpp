@@ -32,11 +32,6 @@ namespace Game{
             }
 
             void Player::update(){
-                
-            }
-
-            void Player::move(){
-                //terei problemas pra fazer dois jogadores. Criar enum com as teclas dos dois? Não. Por enquanto não.
                 if(isPlayer1){
                     if(Keyboard::isKeyPressed(Keyboard::A)){
                         body.move(-velocity.x, 0.0f);
@@ -66,6 +61,9 @@ namespace Game{
                 }
             }
 
+            void Player::draw(sf::RenderTarget& target) {
+                target.draw(this->body);
+            }
             void Player::save(){
                 cout << "Player save() called" << endl;
             }

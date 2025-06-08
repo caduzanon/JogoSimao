@@ -1,45 +1,81 @@
 #include <Game.hpp>
 #include <Entities/Being.hpp>
 #include <Entities/Characters/Player.hpp>
+#include <Entities/Obstacles/Platform.hpp>
+#include <vector>
+#include <SFML/Window/Event.hpp>
+#include <SFML/System/Clock.hpp>
+#include <SFML/Window/Keyboard.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <iostream>
 
 namespace Game{
     using namespace Entities;
     using namespace Characters;
+    using namespace Obstacles;
 
-    Game::Game() : pGM(GraphicsManager::getInstance()), pPlayer1(nullptr), pPlayer2(nullptr){
-        pPlayer1 = new Player(Vector2f(0.0f, 00.0f), Vector2f(20.0f, 20.0f), true);
-        pPlayer2 = new Player(Vector2f(400.0f, 400.0f), Vector2f(15.0f, 15.0f), false);
-        pPlayer1->setGM(pGM);
-        pPlayer2->setGM(pGM);
-        update();
+    Game::Game() : 
+        pGM(Managers::GraphicsManager::getInstance()), 
+        entityList(),
+        platform()
+    {
+        Player* pPlayer1 = new Player(sf::Vector2f(100.0f, 500.0f), sf::Vector2f(30.0f, 50.f), true);
+        Player* pPlayer2 = new Player(sf::Vector2f(700.0f, 500.0f), sf::Vector2f(30.0f, 50.f), false);
+
+        entityList.addEntity(static_cast<Entity*>(pPlayer1));
+        entityList.addEntity(static_cast<Entity*>(pPlayer2));
+
+        if (pPlayer1) { Being::setGM(pGM); }
+        
+        Platform* pPlat = new Platform(sf::Vector2f(0.f, 900.f), sf::Vector2f(1900.f, 50.f));
+        platform.push_back(pPlat);
+
+        update(); 
     }
 
     Game::~Game(){
-        cout << "'Main' destructor called" << endl;
-        delete(pPlayer1);
-        delete(pPlayer2);
+        std::cout << "'Main' destructor called" << std::endl;
+        for (int i = 0; i < entityList.getSize(); i++) {
+            Entity* pEnt = entityList[i]; 
+            if (pEnt) {
+                delete pEnt;
+            }
+        }
+        for (auto* p : platform) {
+            if (p) {
+                delete p;
+            }
+        }
+        platform.clear();
     }
 
     void Game::update(){
+        sf::Clock totalTimeClock;
+        //sf::Clock deltaTimeClock;
+        
         while(pGM->isWindowOpen()){
-            Event evento;
-            RenderWindow* window = pGM->getWindow();
-            if(window->pollEvent(evento)){
-                if(evento.type == Event::Closed || (evento.type == Event::KeyPressed && evento.key.code == Keyboard::Escape)){
+            //sf::Time deltaTime = deltaTimeClock.restart();
+
+            sf::Event evento;
+            while(pGM->getWindow()->pollEvent(evento)){
+                if(evento.type == sf::Event::Closed || (evento.type == sf::Event::KeyPressed && evento.key.code == sf::Keyboard::Escape)){
                     pGM->closeWindow();
                 }
             }
-            //limpa tela
+
             pGM->clearWindow();
-            //pinta corpo   
-            pPlayer1->move();
-            pPlayer2->move();
-            pPlayer1->render();//pinta
-            pPlayer2->render();
-            //mostra
+            
+            for (auto* p : platform) {
+                p->draw(*(pGM->getWindow()));
+            }
+
+            entityList.update(); 
+            entityList.RenderEntities(*(pGM->getWindow()));
+
             pGM->display();
         }
-        sf::Time totalTime = totalTimeClock.getElapsedTime(); //aa
-        cout << "Total Time: " << totalTime.asSeconds() << "s" << std::endl; //maybe we could do something logical with the time
+
+        sf::Time totalTime = totalTimeClock.getElapsedTime();
+        std::cout << "Total Time: " << totalTime.asSeconds() << "s" << std::endl;
     }
 }

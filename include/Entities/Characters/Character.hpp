@@ -18,7 +18,6 @@ namespace Game{
                     void saveDataBuffer();
                     virtual void update() = 0;  //not defined yet: each class will define its own
                     virtual void save() = 0;    //not defined yet: each class will define its own
-                    virtual void move() = 0;    //not defined yet: each class will define its own
             };
         }
     }

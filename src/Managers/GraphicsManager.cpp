@@ -33,14 +33,6 @@ namespace Game{
             delete(window);
         }
 
-        void GraphicsManager::renderBeing(Being* being){
-            if(isWindowOpen()){
-                if(being != nullptr){
-                    window->draw(being->getBody());
-                }
-            }
-        }
-
         void GraphicsManager::display(){
             if(isWindowOpen()){
                 window->display();

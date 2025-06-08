@@ -36,11 +36,6 @@ namespace Game{
         if (pointerGM != NULL)
             pGM = pointerGM;
     }
-
-    void Being::render(){
-        if(pGM)
-            pGM->renderBeing(this);
-    }
     
     RectangleShape Being::getBody(){
         return body;
