@@ -23,7 +23,7 @@ namespace Game{
             Character::~Character(){
                 cout << "Character destructor called" << endl; //hello world
             }
-            void saveDataBuffer(){
+            void Character::saveDataBuffer(){
                 //hello world
             }
         }

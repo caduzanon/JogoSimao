@@ -9,7 +9,7 @@ namespace Game{
     namespace Entities{
         namespace Characters{
             class Player : public Character{
-                private:
+                protected:
                     int points;
                     bool isPlayer1;
                     void initialize();
@@ -20,7 +20,6 @@ namespace Game{
                     void render(sf::RenderTarget& target) override;
                     ~Player();
                     void update();
-                    void move();
                     void save();
             };
         }
