@@ -3,7 +3,8 @@
 namespace Game{
     namespace Entities{
         namespace Characters{
-            Player::Player(const Vector2f position, const Vector2f size, bool isPlayer1) : isPlayer1(isPlayer1), Character(position, size) {
+            Player::Player(const Vector2f position, const Vector2f size, bool isPlayer1, const Game::IDs id ) 
+                : Character(position, size, id), isPlayer1(isPlayer1) {
                 if (isPlayer1)
                     body.setFillColor(Color::Green);
                 else

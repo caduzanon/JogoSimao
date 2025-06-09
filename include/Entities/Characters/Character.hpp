@@ -11,7 +11,7 @@ namespace Game{
                     int num_lives;
                     Vector2f velocity;
                 public:
-                    Character(const Vector2f position, const Vector2f size);
+                    Character(const Vector2f position, const Vector2f size, const Game::IDs id);
                     Character(const RectangleShape givenbody);
                     Character();
                     virtual ~Character();

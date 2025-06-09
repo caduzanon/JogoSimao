@@ -10,21 +10,21 @@ namespace Game{
         cout << "Default Being constructor called" << endl;
         id = 0;
         pGM = nullptr;
-        pFig = nullptr;
+        pText = nullptr;
         body = RectangleShape();
     }
 
     Being::Being(const Vector2f position, const Vector2f size){
         id = 0;
         pGM = nullptr;
-        pFig = nullptr;
+        pText = nullptr;
         body = RectangleShape(size);
         body.setPosition(position);
     }
     Being::Being(const RectangleShape givenbody){
         id = 0;
         pGM = nullptr;
-        pFig = nullptr;
+        pText = nullptr;
         body = givenbody;
     }
 
