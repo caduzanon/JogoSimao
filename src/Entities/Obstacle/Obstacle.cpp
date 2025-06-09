@@ -3,8 +3,8 @@
 #include <iostream>
 
 namespace Game::Entities::Obstacles {
-    Obstacle::Obstacle(const Vector2f position, const Vector2f size, bool harms) 
-        : Entity(position, size), harmful(harms)
+    Obstacle::Obstacle(const Vector2f position, const Vector2f size, const Game::IDs id, bool harms) 
+        : Entity(position, size, id), harmful(harms)
     {
         this->body.setPosition(position);
         this->body.setSize(size);

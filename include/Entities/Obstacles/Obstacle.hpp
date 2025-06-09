@@ -1,5 +1,7 @@
 #pragma once
 #include <Entities/Entity.hpp>
+#include <SFML/Graphics.hpp>
+#include <IDs.hpp>
 
 namespace Game::Entities::Characters {
     class Player;
@@ -11,7 +13,7 @@ namespace Game::Entities::Obstacles{
         protected: 
             bool harmful;
         public:
-            Obstacle(const Vector2f position, const Vector2f size, bool harms = false); //construtora
+            Obstacle(const Vector2f position, const Vector2f size, const Game::IDs id, bool harms = false);
             virtual ~Obstacle();    //destrutora
             void saveDataBuffer();
             virtual void update() = 0;

@@ -3,6 +3,7 @@
 #include <Entities/Characters/Player.hpp>
 #include <Entities/Obstacles/Platform.hpp>
 #include <vector>
+#include <IDs.hpp>
 
 #define ALTURA_PLATAFORMA 150.0f 
 #define R_PLAT 157 //0 - 255
@@ -19,8 +20,8 @@ namespace Game{
         entityList(),
         platform()
     {
-        Player* pPlayer1 = new Player(sf::Vector2f(100.0f, 500.0f), Vector2f(30.0f, 50.f), true);
-        Player* pPlayer2 = new Player(sf::Vector2f(700.0f, 500.0f), Vector2f(30.0f, 50.f), false);
+        Player* pPlayer1 = new Player(sf::Vector2f(100.0f, 500.0f), Vector2f(30.0f, 50.f), true, IDs::Player1);
+        Player* pPlayer2 = new Player(sf::Vector2f(700.0f, 500.0f), Vector2f(30.0f, 50.f), false, IDs::Player2);
 
         entityList.addEntity(static_cast<Entity*>(pPlayer1));
         entityList.addEntity(static_cast<Entity*>(pPlayer2));
@@ -31,7 +32,7 @@ namespace Game{
         float window_size_x = float(pGM->getWindow()->getSize().x);
         float window_size_y = float(pGM->getWindow()->getSize().y);
 
-        Platform* pPlat = new Platform(Vector2f(0.0f, (window_size_y-ALTURA_PLATAFORMA)), Vector2f(window_size_x, ALTURA_PLATAFORMA), Color(R_PLAT, G_PLAT, B_PLAT));
+        Platform* pPlat = new Platform(Vector2f(0.0f, (window_size_y-ALTURA_PLATAFORMA)), Vector2f(window_size_x, ALTURA_PLATAFORMA), Color(R_PLAT, G_PLAT, B_PLAT), IDs::Platform);
         platform.push_back(pPlat);
 
         update(); 
@@ -54,7 +55,7 @@ namespace Game{
     }
 
     void Game::update(){
-        Clock totalTimeClock;
+        //Clock totalTimeClock;
         //sf::Clock deltaTimeClock;
         while(pGM->isWindowOpen()){
             //sf::Time deltaTime = deltaTimeClock.restart();
