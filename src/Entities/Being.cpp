@@ -30,6 +30,8 @@ namespace Game{
 
     Being::~Being(){
         cout << "Being destructor called" << endl;
+        delete pFig;
+        pFig = nullptr;
     }
 
     void Being::setGM(Managers::GraphicsManager* pointerGM){
@@ -37,7 +39,7 @@ namespace Game{
             pGM = pointerGM;
     }
     
-    RectangleShape Being::getBody(){
+    const RectangleShape& Being::getBody() const{
         return body;
     }
 }

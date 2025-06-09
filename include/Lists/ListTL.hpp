@@ -228,10 +228,8 @@ namespace Game{
                     typename List<TL>::template Element<TL>* aux2 = nullptr;
                     while (aux1 != nullptr) { // Iterate until aux1 becomes null
                         aux2 = aux1->getNext(); // Store the next element before deleting aux1
-                        TL* element = aux1->getElement();
-                        if (element != nullptr) {
-                            delete (element);
-                            aux1->setElement(nullptr); 
+                        if (aux1->getElement() != nullptr){
+                            delete (aux1->getElement());
                         }
                         delete aux1; 
                         aux1 = aux2; 

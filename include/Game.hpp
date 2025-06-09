@@ -1,5 +1,6 @@
 #pragma once
 #include <Managers/GraphicsManager.hpp>
+#include <Managers/CollisionManager.hpp>
 #include <Entities/Characters/Player.hpp>
 #include <iostream>
 #include <Lists/EntityList.hpp>
@@ -17,8 +18,8 @@ namespace Game{
             //Player* pPlayer1;
             //Player* pPlayer2;
             GraphicsManager* pGM;
+            CollisionManager* pCM;
             EntityList entityList;
-            vector<Obstacles::Platform*> platform;
             Clock totalTimeClock;
         public:
             Game();

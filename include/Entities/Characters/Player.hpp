@@ -11,6 +11,7 @@ namespace Game{
             class Player : public Character{
                 private:
                     int player_id;
+                protected:
                     int points;
                     bool isPlayer1;
                     void initialize();
@@ -18,11 +19,10 @@ namespace Game{
                     Player(const Vector2f position, const Vector2f size, bool isPlayer1, const Game::IDs id = Game::IDs::Player1);
                     Player(const RectangleShape givenbody);
                     Player();
+                    ~Player() override;
                     void render(sf::RenderTarget& target) override;
-                    ~Player();
-                    void update();
-                    void move();
-                    void save();
+                    void update() override;
+                    void save() override;
             };
         }
     }

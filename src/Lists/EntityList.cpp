@@ -52,6 +52,6 @@ namespace Game{
                     aux->render(target);
                 }
             }
-     
-           }   }
+           }  
+        }
 }

@@ -8,7 +8,7 @@ namespace Game{
             alive = true;
         }
 
-        Entity::Entity(const RectangleShape givenbody) : Being(givenbody), x(0), y(0), id(0), alive(true) {
+        Entity::Entity(const RectangleShape givenbody) : Being(givenbody), x(givenbody.getPosition().x), y(givenbody.getPosition().y), id(0), alive(true) {
         }
 
         Entity::Entity() : x(0), y(0), id(0), alive(true) {
