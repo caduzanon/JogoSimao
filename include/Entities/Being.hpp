@@ -27,9 +27,9 @@ namespace Game{
             Being(const Vector2f position, const Vector2f size);
             Being(const RectangleShape givenbody);
             Being();
-            ~Being();
+            virtual ~Being();
             virtual void update() = 0;
-            RectangleShape getBody();
+            const RectangleShape& getBody() const;
             static void setGM(Managers::GraphicsManager* pointerGM);
     };
 }

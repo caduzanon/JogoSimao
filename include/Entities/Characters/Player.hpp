@@ -17,10 +17,10 @@ namespace Game{
                     Player(const Vector2f position, const Vector2f size, bool isPlayer1);
                     Player(const RectangleShape givenbody);
                     Player();
+                    ~Player() override;
                     void render(sf::RenderTarget& target) override;
-                    ~Player();
-                    void update();
-                    void save();
+                    void update() override;
+                    void save() override;
             };
         }
     }

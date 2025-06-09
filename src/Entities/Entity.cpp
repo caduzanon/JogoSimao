@@ -9,8 +9,8 @@ namespace Game{
         }
 
         Entity::Entity(const RectangleShape givenbody) : Being(givenbody){
-            x = 0;
-            y = 0;
+            x = givenbody.getPosition().x;
+            y = givenbody.getPosition().y;
             alive = true;
         }
 
