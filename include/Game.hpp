@@ -18,7 +18,6 @@ namespace Game{
             //Player* pPlayer2;
             GraphicsManager* pGM;
             EntityList entityList;
-            vector<Obstacles::Platform*> platform;
             Clock totalTimeClock;
         public:
             Game();

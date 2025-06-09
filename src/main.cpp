@@ -9,5 +9,6 @@ int main(){
     //Destrutoras!
     
     Game::Game MeuJogo;
+    MeuJogo.update(); 
     return 0;
 }
