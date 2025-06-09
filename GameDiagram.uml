@@ -274,9 +274,9 @@
 <XPD:REF name="Owner">M9od5EzxP0e0sVn8RZKlKwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="cIpFskvHo0qSpTQNDzcUiQAA">
-<XPD:ATTR name="Name" type="string">pFig</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">pTexture</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">*Image</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">*Texture</XPD:ATTR>
 <XPD:REF name="Owner">M9od5EzxP0e0sVn8RZKlKwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="WYcx4U4y70qelD9trv+s+wAA">
@@ -4706,7 +4706,6 @@
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[76]" type="UMLClassView" guid="VXc2zCLepUyN6KhsYN2TWAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
-<XPD:ATTR name="FillColor" type="string">$00AAAAFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">940</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">1112</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">177</XPD:ATTR>
@@ -5032,7 +5031,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[3]" type="UMLOperation" guid="EWGpu4wQBk2yDbaN9Ec7EwAA">
-<XPD:ATTR name="Name" type="string">createEasyEnemies</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">createSkeletons</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
 <XPD:REF name="Owner">ODk2x5mvlkqaWx4w1r8H2QAA</XPD:REF>
 </XPD:OBJ>
@@ -5132,12 +5131,12 @@
 <XPD:REF name="Owner">I/enJjaCiE67U7s5KXV8qgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[2]" type="UMLOperation" guid="aps//9flVEiI9YpkJWvgHQAA">
-<XPD:ATTR name="Name" type="string">createAvgEnemies</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">createSorcerers</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
 <XPD:REF name="Owner">I/enJjaCiE67U7s5KXV8qgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[3]" type="UMLOperation" guid="92S1+s6wxUeOK2ZEa+Px3AAA">
-<XPD:ATTR name="Name" type="string">createMediumObst</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">createPits</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
 <XPD:REF name="Owner">I/enJjaCiE67U7s5KXV8qgAA</XPD:REF>
 </XPD:OBJ>
@@ -5190,12 +5189,12 @@
 <XPD:REF name="Owner">IjAS3/xQpkub0eVRtLFCTQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[2]" type="UMLOperation" guid="/NrYG1qZa0+3rpKh+k7WdAAA">
-<XPD:ATTR name="Name" type="string">createBosses</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">createDragons</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
 <XPD:REF name="Owner">IjAS3/xQpkub0eVRtLFCTQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[3]" type="UMLOperation" guid="G5BL+WJ4S0u8pk4Ma5id6AAA">
-<XPD:ATTR name="Name" type="string">createMediumObst</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">createPits</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
 <XPD:REF name="Owner">IjAS3/xQpkub0eVRtLFCTQAA</XPD:REF>
 </XPD:OBJ>
@@ -6095,16 +6094,11 @@
 </XPD:OBJ>
 <XPD:ATTR name="#Associations" type="integer">1</XPD:ATTR>
 <XPD:REF name="Associations[0]">9h1tQqblNE+N5JRVtV3D8gAA</XPD:REF>
-<XPD:ATTR name="#Attributes" type="integer">2</XPD:ATTR>
+<XPD:ATTR name="#Attributes" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="RR7anhpzZkWuOZvAqodgHwAA">
 <XPD:ATTR name="Name" type="string">height</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
-<XPD:REF name="Owner">T9DTyL2ff0aCaORFgFOdKgAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="yEzYIwTQ6EOOAQwEqQg2wQAA">
-<XPD:ATTR name="Name" type="string">platformTexture</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">Texture</XPD:ATTR>
 <XPD:REF name="Owner">T9DTyL2ff0aCaORFgFOdKgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>

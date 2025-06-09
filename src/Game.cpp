@@ -4,7 +4,7 @@
 #include <Entities/Obstacles/Platform.hpp>
 #include <vector>
 
-#define ALTURA_PLATAFORMA 150.0f 
+#define ALTURA_PLATAFORMA 50.0f 
 #define R_PLAT 157 //0 - 255
 #define G_PLAT 10 //0 - 255
 #define B_PLAT 0 //0 - 255
@@ -17,10 +17,11 @@ namespace Game{
     Game::Game() : 
         pGM(Managers::GraphicsManager::getInstance()), 
         entityList(),
-        totalTimeClock(Clock())
+        totalTimeClock(Clock()),
+        pCM(new Managers::CollisionManager())
     {
-        Player* pPlayer1 = new Player(sf::Vector2f(100.0f, 500.0f), Vector2f(30.0f, 50.f), true);
-        Player* pPlayer2 = new Player(sf::Vector2f(700.0f, 500.0f), Vector2f(30.0f, 50.f), false);
+        Player* pPlayer1 = new Player(sf::Vector2f(100.0f, 500.0f), Vector2f(30.0f, 30.f), true);
+        Player* pPlayer2 = new Player(sf::Vector2f(200.0f, 500.0f), Vector2f(20.0f, 20.f), false);
 
         entityList.addEntity(static_cast<Entity*>(pPlayer1));
         entityList.addEntity(static_cast<Entity*>(pPlayer2));
