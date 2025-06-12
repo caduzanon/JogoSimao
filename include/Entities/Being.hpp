@@ -21,7 +21,7 @@ namespace Game{
         protected:
             int id;
             static Managers::GraphicsManager* pGM;
-            Image* pFig;
+            Image* pText;
             RectangleShape body;
         public:
             Being(const Vector2f position, const Vector2f size);

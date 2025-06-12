@@ -5,11 +5,10 @@ namespace Game::Entities::Obstacles {
     using namespace Characters;
     class Platform : public Obstacle {
     private:
-        Texture platformTexture;
         void initializeTexture();
 
     public:
-        Platform(const Vector2f position, const Vector2f size, const sf::Color color);
+        Platform(const Vector2f position, const Vector2f size, const sf::Color color, const Game::IDs id);
         ~Platform();
 
         // heranças de Entity
