@@ -30,8 +30,8 @@ namespace Game{
 
     Being::~Being(){
         cout << "Being destructor called" << endl;
-        delete pFig;
-        pFig = nullptr;
+        delete pText;
+        pText = nullptr;
     }
 
     void Being::setGM(Managers::GraphicsManager* pointerGM){
