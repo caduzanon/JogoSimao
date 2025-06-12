@@ -40,6 +40,7 @@ namespace Game{
 
             void Player::notifyKeyPressed(sf::Keyboard::Key key) {
                 if (isPlayer1) {
+                  cout << "Player 1 key pressed: " << key << endl;
                   if(key == Keyboard::A){
                         body.move(-velocity.x, 0.0f);
                     }
@@ -52,7 +53,7 @@ namespace Game{
                     else if(key == Keyboard::S){
                         body.move(0.0f, velocity.y);
                     }
-                } else {
+                } else { // Player 2 controls   
                     if(key == Keyboard::Left){
                         body.move(-velocity.x, 0.0f);
                     }
