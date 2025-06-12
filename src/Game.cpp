@@ -1,45 +1,68 @@
 #include <Game.hpp>
 #include <Entities/Being.hpp>
 #include <Entities/Characters/Player.hpp>
+#include <Entities/Obstacles/Platform.hpp>
+#include <Managers/EventsManager.hpp>
+#include <vector>
+#include <IDs.hpp>
+#include <iostream>
+
+#define ALTURA_PLATAFORMA 50.0f 
+#define R_PLAT 157 //0 - 255
+#define G_PLAT 10 //0 - 255
+#define B_PLAT 0 //0 - 255
 
 namespace Game{
     using namespace Entities;
     using namespace Characters;
+    using namespace Obstacles;
+ 
+    Game::Game() : 
+        pGM(Managers::GraphicsManager::getInstance()), 
+        entityList(),
+        totalTimeClock(Clock()),
+        pCM(new Managers::CollisionManager())
+    {
+ 
+        Player* pPlayer1 = new Player(sf::Vector2f(100.0f, 500.0f), Vector2f(30.0f, 50.f), true, IDs::Player1);
+        Player* pPlayer2 = new Player(sf::Vector2f(700.0f, 500.0f), Vector2f(30.0f, 50.f), false, IDs::Player2);
 
-    Game::Game() : pGM(GraphicsManager::getInstance()), pPlayer1(nullptr), pPlayer2(nullptr){
-        pPlayer1 = new Player(Vector2f(0.0f, 00.0f), Vector2f(20.0f, 20.0f), true);
-        pPlayer2 = new Player(Vector2f(400.0f, 400.0f), Vector2f(15.0f, 15.0f), false);
-        pPlayer1->setGM(pGM);
-        pPlayer2->setGM(pGM);
-        update();
+        entityList.addEntity(static_cast<Entity*>(pPlayer1));
+        entityList.addEntity(static_cast<Entity*>(pPlayer2));
+
+        if (pPlayer1) { Being::setGM(pGM); }
+        
+        float window_size_x = float(pGM->getWindow()->getSize().x);
+        float window_size_y = float(pGM->getWindow()->getSize().y);
+
+        Platform* pPlat = new Platform(Vector2f(0.0f, (window_size_y-ALTURA_PLATAFORMA)), Vector2f(window_size_x, ALTURA_PLATAFORMA), Color(R_PLAT, G_PLAT, B_PLAT), IDs::Platform);
+        platform.push_back(pPlat);
+
+        // update(); 
     }
 
     Game::~Game(){
-        cout << "'Main' destructor called" << endl;
-        delete(pPlayer1);
-        delete(pPlayer2);
+        std::cout << "'Main' destructor called" << std::endl;
     }
 
     void Game::update(){
+        Managers::EventsManager* pEventsManager = Managers::EventsManager::getInstance();
         while(pGM->isWindowOpen()){
-            Event evento;
-            RenderWindow* window = pGM->getWindow();
-            if(window->pollEvent(evento)){
-                if(evento.type == Event::Closed || (evento.type == Event::KeyPressed && evento.key.code == Keyboard::Escape)){
-                    pGM->closeWindow();
-                }
-            }
-            //limpa tela
+            pEventsManager->handleEvents();
+            
             pGM->clearWindow();
-            //pinta corpo   
-            pPlayer1->move();
-            pPlayer2->move();
-            pPlayer1->render();//pinta
-            pPlayer2->render();
-            //mostra
+
+            for (auto* p : platform) {
+                p->render(*(pGM->getWindow()));
+            }
+
+            entityList.update(); 
+            entityList.RenderEntities(*(pGM->getWindow()));
+
             pGM->display();
         }
-        sf::Time totalTime = totalTimeClock.getElapsedTime(); //aa
-        cout << "Total Time: " << totalTime.asSeconds() << "s" << std::endl; //maybe we could do something logical with the time
+
+        // sf::Time totalTime = totalTimeClock.getElapsedTime();
+        // std::cout << "Total Time: " << totalTime.asSeconds() << "s" << std::endl;
     }
 }

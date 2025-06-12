@@ -1,5 +1,7 @@
 #pragma once
 #include <Entities/Entity.hpp>
+#include <SFML/Graphics.hpp>
+#include <IDs.hpp>
 
 namespace Game::Entities::Characters {
     class Player;
@@ -7,17 +9,16 @@ namespace Game::Entities::Characters {
 
 namespace Game::Entities::Obstacles{
     using namespace Characters;
-
     class Obstacle: public Entity {
         protected: 
-            bool isdamage;
+            bool harmful;
         public:
-            Obstacle(const sf::Vector2f& position, const sf::Vector2f& size, bool damage = false); //construtora
+            Obstacle(const Vector2f position, const Vector2f size, const Game::IDs id, bool harms = false);
             virtual ~Obstacle();    //destrutora
             void saveDataBuffer();
-            void update();
-            void save();
-            virtual void obstaculize(Player* pPlayer) = 0; //virtual pura tem que ser implementada na filha
+            virtual void update() = 0;
+            virtual void save() = 0;
+            virtual void obstruct(Player* pPlayer) = 0; //virtual pura tem que ser implementada na filha
 
     };
 }

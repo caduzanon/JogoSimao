@@ -1,8 +1,7 @@
 #pragma once
-//#include <Managers/GraphicsManager.hpp>
 #include <SFML/Graphics.hpp>
 #include <iostream>
-//Skeleton of Being - Abstract Class
+//Being - Abstract Class
 using namespace std;
 using namespace sf;
 
@@ -22,14 +21,15 @@ namespace Game{
         protected:
             int id;
             static Managers::GraphicsManager* pGM;
-            sf::Image* pFig;
-            RectangleShape* shape;
+            Image* pText;
+            RectangleShape body;
         public:
+            Being(const Vector2f position, const Vector2f size);
+            Being(const RectangleShape givenbody);
             Being();
-            ~Being();
+            virtual ~Being();
             virtual void update() = 0;
-            void render();
-            RectangleShape* getShape();
+            const RectangleShape& getBody() const;
             static void setGM(Managers::GraphicsManager* pointerGM);
     };
 }

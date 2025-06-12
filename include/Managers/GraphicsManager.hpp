@@ -6,7 +6,6 @@
 using namespace sf;
 using namespace std;
 
-
 namespace Game{
     class Being;
     namespace Managers{
@@ -20,7 +19,6 @@ namespace Game{
                 ~GraphicsManager();
                 static GraphicsManager* getInstance();
                 RenderWindow* getWindow();
-                void renderBeing(Being* being);
                 void display();
                 void clearWindow();
                 bool isWindowOpen() const;

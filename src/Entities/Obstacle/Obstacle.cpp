@@ -3,14 +3,14 @@
 #include <iostream>
 
 namespace Game::Entities::Obstacles {
-    Obstacle::Obstacle(const sf::Vector2f& position, const sf::Vector2f& size, bool damage) 
-        : Entity(static_cast<int>(position.x), static_cast<int>(position.y)), isdamage(damage)
+    Obstacle::Obstacle(const Vector2f position, const Vector2f size, const Game::IDs id, bool harms) 
+        : Entity(position, size, id), harmful(harms)
     {
-        this->shape->setPosition(position);
-        this->shape->setSize(size);
+        this->body.setPosition(position);
+        this->body.setSize(size);
     }
 
     Obstacle::~Obstacle() {
         
-    }
+    }   
 }

@@ -1,7 +1,6 @@
 #pragma once
 #include <Entities/Being.hpp>
-#include <SFML/System/Vector2.hpp>
-
+#include <IDs.hpp>
 
 //Skeleton of Entity - Abstract Class
 
@@ -9,19 +8,23 @@ namespace Game{
     namespace Entities{
         class Entity : public Being{
             protected:
-                int x; //probably will swap to a vector of ints, easier that way.
+                const int id;
+                int x; //should we swap?
                 int y;
-                RectangleShape body;
                 //ostream buffer;
+                bool alive;
                 void saveDataBuffer();
             public:
-                Entity(const Vector2f position, const Vector2f size);
+                Entity(const Vector2f position, const Vector2f size, const Game::IDs id);
+                Entity(const RectangleShape givenbody);
+                Entity();
                 virtual ~Entity();
                 virtual void update() = 0;
                 virtual void save() = 0;
-                const RectangleShape getBody() const;
+                virtual void render(RenderTarget& target) = 0;
                 void setPosition(int new_x, int new_y);
-                sf::Vector2i getPosition() const;
+                Vector2i getPosition() const;
+                const int get_id() const {return id;}
         };
     }
 }

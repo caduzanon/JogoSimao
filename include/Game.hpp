@@ -1,18 +1,27 @@
 #pragma once
 #include <Managers/GraphicsManager.hpp>
+#include <Managers/CollisionManager.hpp>
 #include <Entities/Characters/Player.hpp>
 #include <iostream>
+#include <Lists/EntityList.hpp>
+#include <vector>                        
+#include <Entities/Obstacles/Platform.hpp>  
 
 namespace Game{
     using namespace Managers;
     using namespace Entities;
     using namespace Characters;
+    using namespace Obstacles;
+    using namespace Lists;
     class Game{
         private:
-            Player* pPlayer1;
-            Player* pPlayer2;
+            //Player* pPlayer1;
+            //Player* pPlayer2;
             GraphicsManager* pGM;
-            sf::Clock totalTimeClock;
+            CollisionManager* pCM;
+            EntityList entityList;
+            std::vector<Platform*> platform;
+            Clock totalTimeClock;
         public:
             Game();
             ~Game();

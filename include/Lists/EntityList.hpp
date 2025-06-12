@@ -1,6 +1,5 @@
 #pragma once
 #include <Lists/ListTL.hpp>
-#include <Lists/Element.hpp>
 #include <Entities/Entity.hpp>
 
 namespace Game{
@@ -19,7 +18,8 @@ namespace Game{
                 int getSize();
                 Entity* operator[](int position);
                 void update();
-                void RenderEntities();
+                //void RenderEntities();
+                void RenderEntities(RenderTarget& target);
         };
     }
 }

@@ -4,17 +4,28 @@
 namespace Game{
     namespace Entities{
         namespace Characters{
-            Character::Character(){
-                cout << "Character constructor called" << endl; //hello world
+            Character::Character() : num_lives(0), velocity(0.0f, 0.0f) {
+                cout << "Default Character constructor called" << endl; //hello world
             }
+
+            Character::Character(const Vector2f position, const Vector2f size, const Game::IDs id) : 
+                Entity(position, size, id) // 1. O 'id' é passado para o construtor da Entity
+            {
+                velocity = Vector2f(0.0f, 0.0f);
+                num_lives = 0;
+                cout << "Character constructor called with position and size" << endl; //hello world
+            }
+
+            Character::Character(const RectangleShape givenbody) : Entity(givenbody){
+                velocity = Vector2f(0.0f, 0.0f);
+                num_lives = 0;
+            }
+
             Character::~Character(){
                 cout << "Character destructor called" << endl; //hello world
             }
-            void saveDataBuffer(){
+            void Character::saveDataBuffer(){
                 //hello world
-            }
-            const RectangleShape& Character::getBody() const {
-                return body;
             }
         }
     }
