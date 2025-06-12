@@ -1,4 +1,5 @@
 #include <Entities/Characters/Player.hpp>
+#include <Managers/EventsManager.hpp>
 
 namespace Game{
     namespace Entities{
@@ -22,6 +23,7 @@ namespace Game{
 
             Player::~Player(){
                 cout << "Player destructor called" << endl;
+                Managers::EventsManager::getInstance()->removeObserver(this);
             }
 
             void Player::initialize(){
@@ -30,37 +32,45 @@ namespace Game{
                 }else{
                     velocity = Vector2f(10.0f, 10.0f);
                 }
+                Managers::EventsManager::getInstance()->addObserver(this);
             }
 
             void Player::update(){
-                if(isPlayer1){
-                    if(Keyboard::isKeyPressed(Keyboard::A)){
+            }
+
+            void Player::notifyKeyPressed(sf::Keyboard::Key key) {
+                if (isPlayer1) {
+                  if(key == Keyboard::A){
                         body.move(-velocity.x, 0.0f);
                     }
-                    else if(Keyboard::isKeyPressed(Keyboard::D)){
+                    else if(key == Keyboard::D){
                         body.move(velocity.x, 0.0f);
                     }
-                    else if(Keyboard::isKeyPressed(Keyboard::W)){
+                    else if(key == Keyboard::W){
                         body.move(0.0f, -velocity.y);
                     }
-                    else if(Keyboard::isKeyPressed(Keyboard::S)){
+                    else if(key == Keyboard::S){
                         body.move(0.0f, velocity.y);
                     }
-                } else{
-                    if(Keyboard::isKeyPressed(Keyboard::Left)){
+                } else {
+                    if(key == Keyboard::Left){
                         body.move(-velocity.x, 0.0f);
                     }
-                    else if(Keyboard::isKeyPressed(Keyboard::Right)){
+                    else if(key == Keyboard::Right){
                         body.move(velocity.x, 0.0f);
                     }
-                    else if(Keyboard::isKeyPressed(Keyboard::Up)){
+                    else if(key == Keyboard::Up){
                         body.move(0.0f, -velocity.y);
                     }
-                    else if(Keyboard::isKeyPressed(Keyboard::Down)){
+                    else if(key == Keyboard::Down){
                         body.move(0.0f, velocity.y);
                     }
                 }
             }
+
+            void Player::notifyKeyReleased(sf::Keyboard::Key key) {
+            }
+
             void Player::render(sf::RenderTarget& target) {
                 target.draw(this->body);
             }
