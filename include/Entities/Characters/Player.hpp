@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <set>
 #include <Entities/Characters/Character.hpp>
 #include <IDs.hpp>
 #include <Observer/Observer.hpp> 
@@ -12,6 +13,7 @@ namespace Game{
             class Player : public Character, public Observer::Observer{
                 private:
                     int player_id;
+                    std::set<sf::Keyboard::Key> pressedKeys;
                 protected:
                     int points;
                     bool isPlayer1;

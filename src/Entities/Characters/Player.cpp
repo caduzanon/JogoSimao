@@ -36,40 +36,31 @@ namespace Game{
             }
 
             void Player::update(){
+                sf::Vector2f movement(0.f, 0.f);
+                // Player 1 checks its keys
+                if (isPlayer1) {
+                    if (pressedKeys.count(sf::Keyboard::W)) movement.y -= velocity.y;
+                    if (pressedKeys.count(sf::Keyboard::S)) movement.y += velocity.y;
+                    if (pressedKeys.count(sf::Keyboard::A)) movement.x -= velocity.x;
+                    if (pressedKeys.count(sf::Keyboard::D)) movement.x += velocity.x;
+                } 
+                // Player 2 checks its keys independently
+                else { 
+                    if (pressedKeys.count(sf::Keyboard::Up))    movement.y -= velocity.y;
+                    if (pressedKeys.count(sf::Keyboard::Down))  movement.y += velocity.y;
+                    if (pressedKeys.count(sf::Keyboard::Left))  movement.x -= velocity.x;
+                    if (pressedKeys.count(sf::Keyboard::Right)) movement.x += velocity.x;
+                }
+
+                body.move(movement);
             }
 
             void Player::notifyKeyPressed(sf::Keyboard::Key key) {
-                if (isPlayer1) {
-                  cout << "Key pressed: " << key << endl;
-                  if(key == Keyboard::A){
-                        body.move(-velocity.x, 0.0f);
-                    }
-                    else if(key == Keyboard::D){
-                        body.move(velocity.x, 0.0f);
-                    }
-                    else if(key == Keyboard::W){
-                        body.move(0.0f, -velocity.y);
-                    }
-                    else if(key == Keyboard::S){
-                        body.move(0.0f, velocity.y);
-                    }
-                } else { // Player 2 controls   
-                    if(key == Keyboard::Left){
-                        body.move(-velocity.x, 0.0f);
-                    }
-                    else if(key == Keyboard::Right){
-                        body.move(velocity.x, 0.0f);
-                    }
-                    else if(key == Keyboard::Up){
-                        body.move(0.0f, -velocity.y);
-                    }
-                    else if(key == Keyboard::Down){
-                        body.move(0.0f, velocity.y);
-                    }
-                }
+                pressedKeys.insert(key);
             }
 
             void Player::notifyKeyReleased(sf::Keyboard::Key key) {
+                pressedKeys.erase(key);
             }
 
             void Player::render(sf::RenderTarget& target) {
