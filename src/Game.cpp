@@ -19,18 +19,20 @@ namespace Game{
  
     Game::Game() : 
         pGM(Managers::GraphicsManager::getInstance()), 
+        pEM(Managers::EventsManager::getInstance()),
         entityList(),
         totalTimeClock(Clock()),
         pCM(new Managers::CollisionManager())
     {
- 
+        Being::setGM(pGM); 
+        Being::setEM(pEM);
+
         Player* pPlayer1 = new Player(sf::Vector2f(100.0f, 500.0f), Vector2f(30.0f, 50.f), true, IDs::Player1);
         Player* pPlayer2 = new Player(sf::Vector2f(700.0f, 500.0f), Vector2f(30.0f, 50.f), false, IDs::Player2);
 
         entityList.addEntity(static_cast<Entity*>(pPlayer1));
         entityList.addEntity(static_cast<Entity*>(pPlayer2));
 
-        if (pPlayer1) { Being::setGM(pGM); }
         
         float window_size_x = float(pGM->getWindow()->getSize().x);
         float window_size_y = float(pGM->getWindow()->getSize().y);
@@ -43,12 +45,12 @@ namespace Game{
 
     Game::~Game(){
         std::cout << "'Main' destructor called" << std::endl;
+        delete pCM;
     }
 
     void Game::update(){
-        Managers::EventsManager* pEventsManager = Managers::EventsManager::getInstance();
         while(pGM->isWindowOpen()){
-            pEventsManager->handleEvents();
+            pEM->handleEvents();
             
             pGM->clearWindow();
 

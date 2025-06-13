@@ -16,11 +16,13 @@ namespace Game{
 
     namespace Managers{
         class GraphicsManager;
+        class EventsManager;
     }
     class Being{
         protected:
             int id;
             static Managers::GraphicsManager* pGM;
+            static Managers::EventsManager* pEM;
             Image* pText;
             RectangleShape body;
         public:
@@ -31,5 +33,6 @@ namespace Game{
             virtual void update() = 0;
             const RectangleShape& getBody() const;
             static void setGM(Managers::GraphicsManager* pointerGM);
+            static void setEM(Managers::EventsManager* pointerEM);
     };
 }

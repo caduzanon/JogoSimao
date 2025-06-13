@@ -23,16 +23,16 @@ namespace Game{
 
             Player::~Player(){
                 cout << "Player destructor called" << endl;
-                Managers::EventsManager::getInstance()->removeObserver(this);
+                pEM->removeObserver(this);
             }
 
             void Player::initialize(){
                 if(isPlayer1){
-                    velocity = Vector2f(8.0f, 8.0f);
+                    velocity = Vector2f(15.0f, 15.0f);
                 }else{
-                    velocity = Vector2f(10.0f, 10.0f);
+                    velocity = Vector2f(20.0f, 20.0f);
                 }
-                Managers::EventsManager::getInstance()->addObserver(this);
+                pEM->addObserver(this);
             }
 
             void Player::update(){
@@ -40,7 +40,7 @@ namespace Game{
 
             void Player::notifyKeyPressed(sf::Keyboard::Key key) {
                 if (isPlayer1) {
-                  cout << "Player 1 key pressed: " << key << endl;
+                  cout << "Key pressed: " << key << endl;
                   if(key == Keyboard::A){
                         body.move(-velocity.x, 0.0f);
                     }

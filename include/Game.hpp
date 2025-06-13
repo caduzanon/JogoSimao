@@ -19,6 +19,7 @@ namespace Game{
             //Player* pPlayer2;
             GraphicsManager* pGM;
             CollisionManager* pCM;
+            EventsManager* pEM;
             EntityList entityList;
             std::vector<Platform*> platform;
             Clock totalTimeClock;

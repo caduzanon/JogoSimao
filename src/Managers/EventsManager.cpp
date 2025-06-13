@@ -1,4 +1,5 @@
 // src/Managers/EventManager.cpp
+#include <algorithm> 
 #include <Managers/EventsManager.hpp>
 
 namespace Game::Managers {
@@ -25,12 +26,7 @@ namespace Game::Managers {
     }
 
     void EventsManager::removeObserver(Observer::Observer* pObserver) {
-        for (auto it = observerList.begin(); it != observerList.end(); ++it) {
-            if (*it == pObserver) {
-                observerList.erase(it);
-                return;
-            }
-        }
+        observerList.erase(std::remove(observerList.begin(), observerList.end(), pObserver), observerList.end());
     }
 
     void EventsManager::handleEvents() {
