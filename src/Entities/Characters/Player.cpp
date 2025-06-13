@@ -28,9 +28,9 @@ namespace Game{
 
             void Player::initialize(){
                 if(isPlayer1){
-                    velocity = Vector2f(15.0f, 15.0f);
+                    velocity = Vector2f(5.0f, 5.0f);
                 }else{
-                    velocity = Vector2f(20.0f, 20.0f);
+                    velocity = Vector2f(7.0f, 7.0f);
                 }
                 pEM->addObserver(this);
             }

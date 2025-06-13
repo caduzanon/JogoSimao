@@ -5,13 +5,6 @@
 using namespace std;
 using namespace sf;
 
-/*
-TODO:
-using namespace Entities;
-using namespace Lists;
-using namespace Levels; 
-*/
-
 namespace Game{  
 
     namespace Managers{
