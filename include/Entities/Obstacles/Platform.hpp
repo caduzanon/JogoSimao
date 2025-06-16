@@ -17,7 +17,7 @@ namespace Game::Entities::Obstacles {
         void render(RenderTarget& target) override;
         void collide(Entity* otherEnt, Vector2f ds);
         // heranças de Obstacle
-        void obstruct(Characters::Player* pPlayer) override;
+        void obstruct(Vector2f ds, Characters::Character* pChar) override;
     };
 
 } // namespace Game::Entities::Obstacles

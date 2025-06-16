@@ -37,8 +37,9 @@ namespace Game{
         float window_size_y = float(pGM->getWindow()->getSize().y);
 
         Platform* pPlat = new Platform(Vector2f(0.0f, (window_size_y-ALTURA_PLATAFORMA)), Vector2f(window_size_x, ALTURA_PLATAFORMA), Color(R_PLAT, G_PLAT, B_PLAT), IDs::Platform);
-        platform.push_back(pPlat);
 
+        platList.addEntity(static_cast<Entity*>(pPlat));
+        pCM->setLists(&entityList, &platList, nullptr, nullptr);
         // update(); 
     }
 
@@ -53,12 +54,11 @@ namespace Game{
             
             pGM->clearWindow();
 
-            for (auto* p : platform) {
-                p->render(*(pGM->getWindow()));
-            }
-
+            platList.update();
+            platList.RenderEntities(*(pGM->getWindow()));
             entityList.update(); 
             entityList.RenderEntities(*(pGM->getWindow()));
+            pCM->update();
 
             pGM->display();
         }

@@ -71,20 +71,20 @@ namespace Game{
             }
 
             void Player::collide(Entity* otherEnt, Vector2f ds){
-                    switch(otherEnt->get_id()){
-                        case((int)IDs::Player1):{
-                            
-                        }
-                            break;
-                        case((int)IDs::Player2):{
+                switch(otherEnt->get_id()){
+                    case((int)IDs::Player1):{
+                        
+                    }
+                        break;
+                    case((int)IDs::Player2):{
 
-                        }
-                            break;
-                        case((int)IDs::Platform):{
-
-                        }
+                    }
+                        break;
+                    case((int)IDs::Platform):{
+                        cout << "Platform hit player!" << endl;
                     }
                 }
+            }
         }
     }
 }

@@ -47,41 +47,53 @@ namespace Game::Managers{
     void CollisionManager::update(){
 
         //Players + Enemies
-        for (int i=0; i < CharactersList->getSize(); i++){
-            Entities::Entity* aux1 = CharactersList->operator[](i);
-            for(int j=0; j < EnemiesList->getSize(); j++){
-                Entities::Entity* aux2 = EnemiesList->operator[](j);
-                Vector2f dist = CalculateDistance(aux1, aux2);
-                if (dist.x < 0.0f && dist.y < 0.0f){
-                    aux1->collide(aux2, dist); //here, aux1 is player, aux2 is enemy. Player function is called!
+        if (CharactersList != nullptr){
+            if(EnemiesList != nullptr){
+                //std::cout << "Checking enemy collisions!" << std::endl;
+                for (int i=0; i < CharactersList->getSize(); i++){
+                    Entities::Entity* aux1 = CharactersList->operator[](i);
+                    for(int j=0; j < EnemiesList->getSize(); j++){
+                        Entities::Entity* aux2 = EnemiesList->operator[](j);
+                        Vector2f dist = CalculateDistance(aux1, aux2);
+                        if (dist.x < 0.0f && dist.y < 0.0f){
+                            aux1->collide(aux2, dist); //here, aux1 is player, aux2 is enemy. Player function is called!
+                        }
+                    }
+                }
+            }
+            if (ObstacleList != nullptr){
+                //std::cout << "Checking obstacle collisions!" << std::endl;
+                //Players & Obst.
+                for (int i=0; i < CharactersList->getSize(); i++){
+                    Entities::Entity* aux1 = CharactersList->operator[](i);
+                    for(int j=0; j < ObstacleList->getSize(); j++){
+                        Entities::Entity* aux2 = ObstacleList->operator[](j);
+                        Vector2f dist = CalculateDistance(aux1, aux2);
+                        //std::cout << "Distance:" << dist.x << "," << dist.y << std::endl;
+                        if (dist.x < 0.0f && dist.y < 0.0f){
+                            aux2->collide(aux1, dist); //here, aux2 is obst, aux1 is player. obstacle function is called!
+                        }
+                    }
+                }
+            }
+            if (ProjectileList != nullptr){
+                //Players & Proj.
+                //std::cout << "Checking projectile collisions!" << std::endl;
+                for (int i=0; i < CharactersList->getSize(); i++){
+                    Entities::Entity* aux1 = CharactersList->operator[](i);
+                    for(int j=0; j < ProjectileList->getSize(); j++){
+                        Entities::Entity* aux2 = ProjectileList->operator[](j);
+                        Vector2f dist = CalculateDistance(aux1, aux2);
+                        if (dist.x < 0.0f && dist.y < 0.0f){
+                            aux2->collide(aux1, dist); //here, aux2 is projectile, aux1 is player. projectile function is called!
+                        }
+                    }
                 }
             }
         }
-
-        //Players & Obst.
-        for (int i=0; i < CharactersList->getSize(); i++){
-            Entities::Entity* aux1 = CharactersList->operator[](i);
-            for(int j=0; j < ObstacleList->getSize(); j++){
-                Entities::Entity* aux2 = ObstacleList->operator[](j);
-                Vector2f dist = CalculateDistance(aux1, aux2);
-                if (dist.x < 0.0f && dist.y < 0.0f){
-                    aux2->collide(aux1, dist); //here, aux2 is obst, aux1 is player. obstacle function is called!
-                }
-            }
+        else{
+            std::cout << "Collision Manager called with empty CharacterList" << std::endl;
         }
-
-        //Players & Proj.
-        for (int i=0; i < CharactersList->getSize(); i++){
-            Entities::Entity* aux1 = CharactersList->operator[](i);
-            for(int j=0; j < ProjectileList->getSize(); j++){
-                Entities::Entity* aux2 = ProjectileList->operator[](j);
-                Vector2f dist = CalculateDistance(aux1, aux2);
-                if (dist.x < 0.0f && dist.y < 0.0f){
-                    aux2->collide(aux1, dist); //here, aux2 is projectile, aux1 is player. projectile function is called!
-                }
-            }
-        }
-        
         //obstacles don't collide
     }
 }

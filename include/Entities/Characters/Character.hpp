@@ -19,6 +19,8 @@ namespace Game{
                     virtual void update() = 0;  //not defined yet: each class will define its own
                     virtual void save() = 0;    //not defined yet: each class will define its own
                     virtual void collide(Entity* otherEnt, Vector2f ds = Vector2f(0.0f, 0.0f)) = 0;
+                    Vector2f getVelocity();
+                    void setVelocity(Vector2f v);
             };
         }
     }

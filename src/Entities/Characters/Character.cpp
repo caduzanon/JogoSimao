@@ -27,6 +27,16 @@ namespace Game{
             void Character::saveDataBuffer(){
                 //hello world
             }
+
+            Vector2f Character::getVelocity(){
+                return velocity;
+            }
+
+            void Character::setVelocity(Vector2f v){
+                if (v != Vector2f()){
+                    velocity = v;
+                }
+            }
         }
     }
 }

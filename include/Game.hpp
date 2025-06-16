@@ -21,7 +21,7 @@ namespace Game{
             CollisionManager* pCM;
             EventsManager* pEM;
             EntityList entityList;
-            std::vector<Platform*> platform;
+            EntityList platList;
             Clock totalTimeClock;
         public:
             Game();
