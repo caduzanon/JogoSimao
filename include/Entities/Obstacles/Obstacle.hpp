@@ -19,7 +19,8 @@ namespace Game::Entities::Obstacles{
             void saveDataBuffer();
             virtual void update() = 0;
             virtual void save() = 0;
+            virtual void render(RenderTarget& target) = 0;
             virtual void obstruct(Vector2f ds, Characters::Character* pChar) = 0; //virtual pura tem que ser implementada na filha
-
+            virtual void collide(Entity* otherEnt, Vector2f ds = Vector2f(0.0f, 0.0f)) = 0;
     };
 }

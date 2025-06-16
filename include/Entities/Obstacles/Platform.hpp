@@ -6,7 +6,6 @@ namespace Game::Entities::Obstacles {
     class Platform : public Obstacle {
     private:
         void initializeTexture();
-
     public:
         Platform(const Vector2f position, const Vector2f size, const sf::Color color, const Game::IDs id);
         ~Platform();
