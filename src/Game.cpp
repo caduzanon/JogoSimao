@@ -33,7 +33,6 @@ namespace Game{
         entityList.addEntity(static_cast<Entity*>(pPlayer1));
         entityList.addEntity(static_cast<Entity*>(pPlayer2));
 
-        
         float window_size_x = float(pGM->getWindow()->getSize().x);
         float window_size_y = float(pGM->getWindow()->getSize().y);
 

@@ -70,6 +70,21 @@ namespace Game{
                 cout << "Player save() called" << endl;
             }
 
+            void Player::collide(Entity* otherEnt, Vector2f ds){
+                    switch(otherEnt->get_id()){
+                        case((int)IDs::Player1):{
+                            
+                        }
+                            break;
+                        case((int)IDs::Player2):{
+
+                        }
+                            break;
+                        case((int)IDs::Platform):{
+
+                        }
+                    }
+                }
         }
     }
 }

@@ -27,4 +27,8 @@ namespace Game::Entities::Obstacles {
     void Platform::obstruct(Characters::Player* pPlayer) {
     }
 
+    void Platform::collide(Entity* otherEnt, Vector2f ds){
+        //hello world
+    }
+
 }

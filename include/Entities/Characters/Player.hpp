@@ -32,6 +32,8 @@ namespace Game{
                     void move();
                     void notifyKeyPressed(sf::Keyboard::Key key) override;
                     void notifyKeyReleased(sf::Keyboard::Key key) override;
+
+                    void collide(Entity* otherEnt, Vector2f ds);
             };
         }
     }

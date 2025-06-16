@@ -15,7 +15,7 @@ namespace Game::Entities::Obstacles {
         void update() override;
         void save() override;
         void render(RenderTarget& target) override;
-        //void onCollision(Entity* other) override; //this does NOT go in here. it belongs in CollisionManager.
+        void collide(Entity* otherEnt, Vector2f ds);
         // heranças de Obstacle
         void obstruct(Characters::Player* pPlayer) override;
     };

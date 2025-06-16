@@ -25,6 +25,7 @@ namespace Game{
                 void setPosition(int new_x, int new_y);
                 Vector2i getPosition() const;
                 const int get_id() const {return id;}
+                virtual void collide(Entity* otherEnt, Vector2f ds = Vector2f(0.0f, 0.0f)) = 0;
         };
     }
 }
